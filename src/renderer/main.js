@@ -8,12 +8,14 @@ import iView from 'iview'
 import 'iview/dist/styles/iview.css'
 import moment from 'moment'
 import _ from 'lodash'
+import VueSocketio from 'vue-socket.io'
 // -----------------------------------------------------------------------------------------------
 import api from './_api.js'
 Vue.prototype.$api = api
 Vue.use(iView)
 Vue.prototype.$moment = moment
 Vue.prototype.$_ = _
+Vue.use(VueSocketio, 'http://127.0.0.1:4100')
 // -----------------------------------------------------------------------------------------------
 axios.interceptors.request.use((config) => {
   // Do something before request is sent

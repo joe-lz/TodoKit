@@ -24,7 +24,8 @@ function createWindow () {
   mainWindow = new BrowserWindow({
     width: width - 100,
     height: height - 100,
-    useContentSize: true
+    useContentSize: true,
+    titleBarStyle: 'hidden-inset'
   })
 
   mainWindow.loadURL(winURL)
@@ -47,7 +48,6 @@ app.on('activate', () => {
     createWindow()
   }
 })
-
 /**
  * Auto Updater
  *

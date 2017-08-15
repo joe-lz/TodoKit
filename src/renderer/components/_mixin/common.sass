@@ -23,6 +23,10 @@ body
   background-color: white
   // -webkit-font-smoothing: antialiased
   -webkit-font-smoothing: initial
+  header, aside
+    -webkit-app-region: drag
+  button
+    -webkit-app-region: no-drag
 a
   text-decoration: none
   color: $a-color
@@ -100,3 +104,12 @@ input, button, textarea, .ivu-select-selection, .ivu-select-dropdown, .ivu-modal
     border-color: #57a3f3 !important
     outline: 0
     box-shadow: 0 0 0 2px rgba(45,140,240,.2)
+
+.ivu-tabs-bar
+  position: fixed
+  z-index: 2
+  top: 50px
+  width: 100%
+  background: white
+.ivu-tabs
+  padding-top: 50px
