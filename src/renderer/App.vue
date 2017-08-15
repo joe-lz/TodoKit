@@ -30,7 +30,6 @@ export default {
       // }
     },
     NewLog (val) {
-      console.log(this.curUserId, val.to)
       if (this.curUserId === val.to) {
         let myNotification = new Notification('新消息', {
           body: val.content
