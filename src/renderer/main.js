@@ -4,19 +4,37 @@ import App from './App'
 import router from './router'
 import store from './store'
 import axios from 'axios'
+import iView from 'iview'
+import 'iview/dist/styles/iview.css'
+import moment from 'moment'
+import _ from 'lodash'
 // -----------------------------------------------------------------------------------------------
 import api from './_api.js'
 Vue.prototype.$api = api
+Vue.use(iView)
+Vue.prototype.$moment = moment
+Vue.prototype.$_ = _
 // -----------------------------------------------------------------------------------------------
+axios.interceptors.request.use((config) => {
+  // Do something before request is sent
+  if (api.GetAuth() && api.GetAuth().access_token) {
+    config.data['access_token'] = api.GetAuth().access_token
+  }
+  return config
+}, function (error) {
+  // Do something with request error
+  return Promise.reject(error)
+})
 axios.interceptors.response.use((res) => {
   // token 已过期，重定向到登录页面
-  if (res.data.code === 2) {
+  if (res.data.code === 5) {
     api.RemoveAuth()
-    router.push({ name: 'Sign' })
+    router.push({ name: 'SignUpSMS' })
   }
   return res
 }, (err) => {
   // Do something with response error
+  Vue.prototype.$Message.error(err)
   return Promise.reject(err)
 })
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
@@ -29,7 +47,7 @@ router.beforeEach((to, from, next) => {
       next()
     } else {
       api.RemoveAuth()
-      next({ name: 'Sign', query: { from: to.fullPath } })
+      next({ name: 'SignUpSMS', query: { from: to.fullPath } })
     }
   } else {
     next()

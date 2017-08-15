@@ -1,1 +1,22 @@
-p index page
+.one-wrapper
+  PmHeader
+  .two-wrapper
+    .allData-wrapper
+      //- p.title 产品列表
+      ProductItem(v-for='item of allData', :key='item._id', :item='item')
+      .add
+        .add-item(@click='isModal = true')
+          i.iconfont.icon-addpassengers
+    Modal.productCreate(title="创建产品", v-model="isModal", :mask-closable="false", :closable="false", width='400')
+      Form.form-wrapper(:label-width="60", :rules="ruleValidate", ref="formData", :model="formData")
+        Form-item.input-wrapper(label='名称' prop="name")
+          Input(size='large' v-model='formData.name')
+        Form-item.input-wrapper(label='Logo')
+          ImgUpload(:folderName='`productlogo/`', 
+          :img='formData.logo', 
+          :picroot='$api.link.qiniuUrl',
+          imageName='productlogo-create'
+          @fileUploaded='fileUploaded')
+      div(slot='footer')
+        Button(size='large' @click='isModal = false') 取消
+        Button(type="primary" size='large' @click='handleCreate', :loading="modal_create_loading") 创建

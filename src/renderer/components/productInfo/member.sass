@@ -1,0 +1,33 @@
+@import "../_mixin/mixin.sass"
+
+.section-content
+  padding: 30px
+  .item-wrapper
+    vertical-align: top
+    display: inline-block
+    margin-bottom: 30px
+    margin-right: 30px
+    width: 100px
+    text-align: center
+    font-weight: $fw-lg
+    .position
+      color: $gray
+    .coverbg
+      margin-bottom: 10px
+      width: 100%
+      height: 100px
+      box-shadow: $box-shadow
+      &:hover
+        .del
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 100%
+          height: 100%
+          color: white
+          background: rgba(0,0,0,0.6)
+          cursor: pointer
+      .del
+        display: none
+        i
+          font-size: 2rem

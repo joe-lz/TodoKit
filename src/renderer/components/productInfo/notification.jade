@@ -1,0 +1,27 @@
+.section-wrapper
+  .section-content
+    Tabs
+      Tab-pane(label="未读" name="name1")
+        .item-wrapper(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')
+          span.from {{item.from.name || $api.placeholder.noname}}
+          span.action(v-if='item.action == 1') 指派给
+          span.action(v-if='item.action == 2') 完成，并指派给
+          span.action(v-if='item.action == 3') 拒绝
+          span.action(v-if='item.action == 4') 评论
+          span.to 我
+          span.content(v-if='item.content') "{{item.content}}"
+          span.time {{item.createdAt}}
+        NoData(v-if='allData && allData.length == 0')
+      Tab-pane(label="已读" name="name2")
+        .item-wrapper.isRead(v-for='item of allDataRead' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')
+          span.from {{item.from.name || $api.placeholder.noname}}
+          span.action(v-if='item.action == 1') 指派给
+          span.action(v-if='item.action == 2') 完成，并指派给
+          span.action(v-if='item.action == 3') 拒绝
+          span.action(v-if='item.action == 4') 评论
+          span.to 我
+          span.content(v-if='item.content') "{{item.content}}"
+          span.time {{item.createdAt}}
+        NoData(v-if='allDataRead && allDataRead.length == 0')
+  
+  TodoEdit.todoEdit-wrapper(:curPost='curPost', :class='{"isEdit": isEdit}')

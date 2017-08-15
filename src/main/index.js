@@ -19,10 +19,12 @@ function createWindow () {
   /**
    * Initial window options
    */
+  const electron = require('electron')
+  const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
   mainWindow = new BrowserWindow({
-    height: 563,
-    useContentSize: true,
-    width: 1000
+    width: width - 100,
+    height: height - 100,
+    useContentSize: true
   })
 
   mainWindow.loadURL(winURL)

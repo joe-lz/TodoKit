@@ -1,0 +1,110 @@
+@import "../_mixin/mixin.sass"
+
+$sidebar-width: 180px
+.one-wrapper
+  width: 100vw
+  height: 100vh
+  .two-wrapper
+    height: 100%
+    .sidebar-wrapper
+      position: fixed
+      left: 0
+      top: 0
+      z-index: 9
+      padding-top: 60px
+      width: $sidebar-width
+      height: 100%
+      background: $bg-youtube
+      .mode-wrapper
+        position: absolute
+        bottom: 10px
+        padding-right: 10px
+        text-align: right
+        width: 100%
+        .title
+          margin-right: 5px
+          color: $gray
+      .con
+        padding-bottom: 20px
+        position: relative
+        .con-title
+          position: absolute
+          bottom: 0
+          right: 10px
+          color: $gray-sub
+      .border-dive
+        margin: 10px 0
+      a
+        padding-left: 15px
+        display: block
+        height: 40px
+        line-height: 40px
+        color: $f-color
+        font-weight: $fw-nm
+        color: $gray
+        &:hover
+          background: #EBEBEB
+          font-weight: $fw-lg
+        &.active
+          color: $f-color
+          font-weight: $fw-lg
+          i
+            color: $a-color
+        i
+          display: inline-block
+          width: 30px
+          height: 100%
+          text-align: center
+          &:before
+            position: relative
+            top: 1px
+        .count
+          position: relative
+          top: -6px
+          left: 6px
+          display: inline-block
+          width: 4px
+          height: 4px
+          border-radius: 2px
+          background: $red
+        .isMatrix
+          position: relative
+          top: 15px
+          right: 5px
+          float: right
+    .main-wrapper
+      padding-left: $sidebar-width
+      height: 100%
+      .contain-wrapper
+
+@include middle-screen
+  .one-wrapper
+    .two-wrapper
+      .sidebar-wrapper
+        width: 50px
+        .con-title
+          display: none
+        a
+          position: relative
+          padding-left: 0
+          &.active
+            background: $gray-sub-sub
+          i
+            width: 100%
+          span
+            display: none
+          .count
+            position: absolute
+            top: 10px
+            right: 10px
+            left: initial
+      .main-wrapper
+        padding-left: 50px
+
+@include small-screen
+  .one-wrapper
+    .two-wrapper
+      .sidebar-wrapper
+        display: none
+      .main-wrapper
+        padding-left: 0

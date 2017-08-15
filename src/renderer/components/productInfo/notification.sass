@@ -1,0 +1,39 @@
+@import "../_mixin/mixin.sass"
+.section-content
+  .item-wrapper
+    position: relative
+    display: flex
+    padding: 0 10px
+    width: 100%
+    height: 44px
+    line-height: 44px
+    border-bottom: $border
+    cursor: pointer
+    color: $gray
+    &:hover, &.selected
+      background: $bg-color
+    .from
+    .action
+      margin: 0 5px
+      color: $a-color
+    .to
+    .content
+      padding-right: 140px
+      flex: 1
+      margin-left: 15px
+      text-overflow: ellipsis
+      overflow: hidden
+      white-space: nowrap
+    .time
+      position: absolute
+      right: 10px
+      color: $gray-sub
+  .isRead
+    color: $gray-sub
+    .action
+      color: $gray
+.todoEdit-wrapper
+  right: -600px
+  transition: $transition
+  &.isEdit
+    right: 0

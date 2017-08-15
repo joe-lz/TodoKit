@@ -1,15 +1,15 @@
-<template>
-  <div id="app">
-    <router-view></router-view>
-  </div>
+<template lang='jade'>
+#app
+  transition(name='fade')
+    router-view.absolute
 </template>
 
 <script>
-  export default {
-    name: 'pm_vue'
+export default {
+  name: 'pm_vue',
+  created () {
   }
+}
 </script>
 
-<style>
-  /* CSS */
-</style>
+<style lang='sass' src='./components/_mixin/common.sass'></style>

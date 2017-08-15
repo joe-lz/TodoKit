@@ -3,12 +3,41 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 const Index = resolve => require(['@/components/index'], resolve)
-const Sign = resolve => require(['@/components/sign'], resolve)
+const SignIn = resolve => require(['@/components/sign'], resolve)
+const SignUp = resolve => require(['@/components/sign/signup'], resolve)
+const SignUpSMS = resolve => require(['@/components/sign/signup-sms'], resolve)
+const UserSetting = resolve => require(['@/components/user/setting'], resolve)
+const ProductInfo = resolve => require(['@/components/productInfo'], resolve)
+const ProductCreate = resolve => require(['@/components/productInfo/create'], resolve)
+const ProductTodo = resolve => require(['@/components/productInfo/todo'], resolve)
+const ProductMember = resolve => require(['@/components/productInfo/member'], resolve)
+const ProductSetting = resolve => require(['@/components/productInfo/setting'], resolve)
+const ProductNotification = resolve => require(['@/components/productInfo/notification'], resolve)
+const ProductAllPost = resolve => require(['@/components/productInfo/allpost'], resolve)
+const ProductStatistics = resolve => require(['@/components/productInfo/statistics'], resolve)
 
 export default new Router({
+  linkActiveClass: 'active',
   routes: [
     { path: '/', name: 'Index', component: Index, meta: { requireAuth: true } },
-    { path: '/sign', name: 'Sign', component: Sign },
+    { path: '/signin', name: 'SignIn', component: SignIn },
+    { path: '/signup', name: 'SignUp', component: SignUp },
+    { path: '/signup-sms', name: 'SignUpSMS', component: SignUpSMS },
+    { path: '/user/setting', name: 'UserSetting', component: UserSetting, meta: { requireAuth: true } },
+    { path: '/product/:id',
+      // name: 'ProductInfo',
+      component: ProductInfo,
+      children: [
+        { path: '', name: 'ProductInfo', redirect: {name: 'ProductTodo'} },
+        { path: 'create', name: 'ProductCreate', component: ProductCreate, meta: { requireAuth: true } },
+        { path: 'todo', name: 'ProductTodo', component: ProductTodo, meta: { requireAuth: true } },
+        { path: 'member', name: 'ProductMember', component: ProductMember, meta: { requireAuth: true } },
+        { path: 'setting', name: 'ProductSetting', component: ProductSetting, meta: { requireAuth: true } },
+        { path: 'notification', name: 'ProductNotification', component: ProductNotification, meta: { requireAuth: true } },
+        { path: 'allpost', name: 'ProductAllPost', component: ProductAllPost, meta: { requireAuth: true } },
+        { path: 'statistics', name: 'ProductStatistics', component: ProductStatistics, meta: { requireAuth: true } }
+      ]
+    },
     { path: '*', redirect: '/' }
   ]
 })

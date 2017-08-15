@@ -1,0 +1,11 @@
+.one-wrapper
+  Form.form-wrapper(:label-width="60", :rules="ruleValidate", ref="formData", :model="formData")
+    img.logo(:src="$api.link.logo", alt="")
+    Form-item.input-wrapper(label='手机' prop="mobile")
+      Input(size='large' v-model='formData.mobile')
+    Form-item.input-wrapper.code-wrapper(label='验证码' prop="code")
+      Input(size='large' v-model='formData.code')
+      Button.btn-code(disabled v-if='isTiming') {{time}}秒后重新发送
+      Button.btn-code(@click='sendSMS' v-else) 发送验证码
+    Form-item.input-wrapper
+      Button(type="primary" long size='large' @click='signinSms') 登录

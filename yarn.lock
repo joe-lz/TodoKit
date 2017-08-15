@@ -227,12 +227,12 @@ asap@~1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/asap/download/asap-1.0.0.tgz#b2a45da5fdfa20b0496fc3768cc27c12fa916a7d"
 
-asar-integrity@0.1.1:
-  version "0.1.1"
-  resolved "http://registry.npm.taobao.org/asar-integrity/download/asar-integrity-0.1.1.tgz#1a709dd78443707fc260f7ce363d9569983caf76"
+asar-integrity@0.1.2:
+  version "0.1.2"
+  resolved "http://registry.npm.taobao.org/asar-integrity/download/asar-integrity-0.1.2.tgz#461248c63c24b13d4a11a70c378f8f59dba2b4af"
   dependencies:
     bluebird-lst "^1.0.2"
-    fs-extra-p "^4.3.0"
+    fs-extra-p "^4.4.0"
 
 asn1.js@^4.0.0:
   version "4.9.1"
@@ -267,6 +267,10 @@ ast-types@0.9.6:
 async-each@^1.0.0:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/async-each/download/async-each-1.0.1.tgz#19d386a1d9edc6e7c1c85d388aedbcc56d33602d"
+
+async-exit-hook@^2.0.1:
+  version "2.0.1"
+  resolved "http://registry.npm.taobao.org/async-exit-hook/download/async-exit-hook-2.0.1.tgz#8bd8b024b0ec9b1c01cccb9af9db29bd717dfaf3"
 
 async-foreach@^0.1.3:
   version "0.1.3"
@@ -1177,6 +1181,12 @@ bluebird-lst@^1.0.2:
   dependencies:
     bluebird "^3.5.0"
 
+bluebird-lst@^1.0.3:
+  version "1.0.3"
+  resolved "http://registry.npm.taobao.org/bluebird-lst/download/bluebird-lst-1.0.3.tgz#cc56c18660eff0a0b86e2c33d1659618f7005158"
+  dependencies:
+    bluebird "^3.5.0"
+
 bluebird@^2.10.2:
   version "2.11.0"
   resolved "http://registry.npm.taobao.org/bluebird/download/bluebird-2.11.0.tgz#534b9033c022c9579c56ba3b3e5a5caafbb650e1"
@@ -1444,6 +1454,14 @@ chalk@^2.0.1:
     escape-string-regexp "^1.0.5"
     supports-color "^4.0.0"
 
+chalk@^2.1.0:
+  version "2.1.0"
+  resolved "http://registry.npm.taobao.org/chalk/download/chalk-2.1.0.tgz#ac5becf14fa21b99c6c92ca7a7d7cfd5b17e743e"
+  dependencies:
+    ansi-styles "^3.1.0"
+    escape-string-regexp "^1.0.5"
+    supports-color "^4.0.0"
+
 change-case@3.0.0, change-case@3.0.x:
   version "3.0.0"
   resolved "http://registry.npm.taobao.org/change-case/download/change-case-3.0.0.tgz#6c9c8e35f8790870a82b6b0745be8c3cbef9b081"
@@ -1470,6 +1488,10 @@ change-case@3.0.0, change-case@3.0.x:
 character-parser@1.2.1:
   version "1.2.1"
   resolved "http://registry.npm.taobao.org/character-parser/download/character-parser-1.2.1.tgz#c0dde4ab182713b919b970959a123ecc1a30fcd6"
+
+charenc@~0.0.1:
+  version "0.0.2"
+  resolved "http://registry.npm.taobao.org/charenc/download/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
 
 chokidar@^1.6.0, chokidar@^1.7.0:
   version "1.7.0"
@@ -1860,6 +1882,10 @@ cross-unzip@0.0.2:
   version "0.0.2"
   resolved "http://registry.npm.taobao.org/cross-unzip/download/cross-unzip-0.0.2.tgz#5183bc47a09559befcf98cc4657964999359372f"
 
+crypt@~0.0.1:
+  version "0.0.2"
+  resolved "http://registry.npm.taobao.org/crypt/download/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
+
 cryptiles@2.x.x:
   version "2.0.5"
   resolved "http://registry.npm.taobao.org/cryptiles/download/cryptiles-2.0.5.tgz#3bdfecdc608147c1c67202fa291e7dca59eaa3b8"
@@ -2034,9 +2060,15 @@ debug@2.6.7:
   dependencies:
     ms "2.0.0"
 
-debug@2.6.8, debug@^2.1.1, debug@^2.1.3, debug@^2.2.0, debug@^2.4.5, debug@^2.6.1, debug@^2.6.6, debug@^2.6.8:
+debug@2.6.8, debug@^2.1.1, debug@^2.1.3, debug@^2.2.0, debug@^2.4.5, debug@^2.6.6, debug@^2.6.8:
   version "2.6.8"
   resolved "http://registry.npm.taobao.org/debug/download/debug-2.6.8.tgz#e731531ca2ede27d188222427da17821d68ff4fc"
+  dependencies:
+    ms "2.0.0"
+
+debug@^3.0.0:
+  version "3.0.0"
+  resolved "http://registry.npm.taobao.org/debug/download/debug-3.0.0.tgz#1d2feae53349047b08b264ec41906ba17a8516e4"
   dependencies:
     ms "2.0.0"
 
@@ -2244,6 +2276,14 @@ dot-prop@^4.1.0:
   dependencies:
     is-obj "^1.0.0"
 
+dotenv-expand@^4.0.1:
+  version "4.0.1"
+  resolved "http://registry.npm.taobao.org/dotenv-expand/download/dotenv-expand-4.0.1.tgz#68fddc1561814e0a10964111057ff138ced7d7a8"
+
+dotenv@^4.0.0:
+  version "4.0.0"
+  resolved "http://registry.npm.taobao.org/dotenv/download/dotenv-4.0.0.tgz#864ef1379aced55ce6f95debecdce179f7a0cd1d"
+
 duplexer3@^0.1.4:
   version "0.1.4"
   resolved "http://registry.npm.taobao.org/duplexer3/download/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
@@ -2267,63 +2307,90 @@ ee-first@1.1.1:
   version "1.1.1"
   resolved "http://registry.npm.taobao.org/ee-first/download/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
 
-electron-builder-http@19.19.0, electron-builder-http@~19.19.0:
-  version "19.19.0"
-  resolved "http://registry.npm.taobao.org/electron-builder-http/download/electron-builder-http-19.19.0.tgz#20f908fcd1bbe202fd44a9623abd9e4d7bc98825"
+electron-builder-http@19.21.0, electron-builder-http@~19.21.0:
+  version "19.21.0"
+  resolved "http://registry.npm.taobao.org/electron-builder-http/download/electron-builder-http-19.21.0.tgz#3e812f030fddb5eaebcc26303f7bca1a34e1da76"
   dependencies:
-    bluebird-lst "^1.0.2"
-    debug "^2.6.8"
+    bluebird-lst "^1.0.3"
+    debug "^3.0.0"
     fs-extra-p "^4.4.0"
 
-electron-builder-util@19.19.0, electron-builder-util@~19.19.0:
-  version "19.19.0"
-  resolved "http://registry.npm.taobao.org/electron-builder-util/download/electron-builder-util-19.19.0.tgz#96082aff13bfda8f40a62739f10718c9c42f6d4c"
+electron-builder-util@19.22.0:
+  version "19.22.0"
+  resolved "http://registry.npm.taobao.org/electron-builder-util/download/electron-builder-util-19.22.0.tgz#1da670a504cfa4e1cbd82b6aa62f9fb20c74820a"
   dependencies:
     "7zip-bin" "^2.1.0"
-    bluebird-lst "^1.0.2"
-    chalk "^2.0.1"
-    debug "^2.6.8"
-    electron-builder-http "~19.19.0"
+    bluebird-lst "^1.0.3"
+    chalk "^2.1.0"
+    debug "^3.0.0"
+    electron-builder-http "~19.21.0"
     fcopy-pre-bundled "0.3.4"
     fs-extra-p "^4.4.0"
     ini "^1.3.4"
     is-ci "^1.0.10"
+    lazy-val "^1.0.2"
     node-emoji "^1.8.1"
     semver "^5.4.1"
     source-map-support "^0.4.15"
     stat-mode "^0.2.2"
+    temp-file "^1.0.1"
     tunnel-agent "^0.6.0"
 
-electron-builder@^19.10.0:
-  version "19.19.0"
-  resolved "http://registry.npm.taobao.org/electron-builder/download/electron-builder-19.19.0.tgz#1a3a80745658484f4af6f66a38aab6cc16f4af70"
+electron-builder-util@~19.21.0:
+  version "19.21.0"
+  resolved "http://registry.npm.taobao.org/electron-builder-util/download/electron-builder-util-19.21.0.tgz#d812100cf2df94734231b25d200e133185cee639"
+  dependencies:
+    "7zip-bin" "^2.1.0"
+    bluebird-lst "^1.0.3"
+    chalk "^2.1.0"
+    debug "^3.0.0"
+    electron-builder-http "~19.21.0"
+    fcopy-pre-bundled "0.3.4"
+    fs-extra-p "^4.4.0"
+    ini "^1.3.4"
+    is-ci "^1.0.10"
+    lazy-val "^1.0.2"
+    node-emoji "^1.8.1"
+    semver "^5.4.1"
+    source-map-support "^0.4.15"
+    stat-mode "^0.2.2"
+    temp-file "^1.0.1"
+    tunnel-agent "^0.6.0"
+
+electron-builder@^19.21.0:
+  version "19.21.1"
+  resolved "http://registry.npm.taobao.org/electron-builder/download/electron-builder-19.21.1.tgz#5adef558e2e249dff25133e70e78ee34df940712"
   dependencies:
     "7zip-bin" "^2.1.0"
     ajv "^5.2.2"
     ajv-keywords "^2.1.0"
-    asar-integrity "0.1.1"
-    bluebird-lst "^1.0.2"
-    chalk "^2.0.1"
+    asar-integrity "0.1.2"
+    bluebird-lst "^1.0.3"
+    chalk "^2.1.0"
     chromium-pickle-js "^0.2.0"
     cuint "^0.2.2"
-    debug "^2.6.8"
-    electron-builder-http "19.19.0"
-    electron-builder-util "19.19.0"
+    debug "^3.0.0"
+    dotenv "^4.0.0"
+    dotenv-expand "^4.0.1"
+    electron-builder-http "19.21.0"
+    electron-builder-util "19.22.0"
     electron-download-tf "4.3.1"
-    electron-osx-sign "0.4.6"
-    electron-publish "19.19.0"
+    electron-osx-sign "0.4.7"
+    electron-publish "19.21.0"
     fs-extra-p "^4.4.0"
     hosted-git-info "^2.5.0"
     is-ci "^1.0.10"
     isbinaryfile "^3.0.2"
     js-yaml "^3.9.1"
+    lazy-val "^1.0.2"
     minimatch "^3.0.4"
     normalize-package-data "^2.4.0"
     parse-color "^1.0.0"
     plist "^2.1.0"
-    read-config-file "^0.1.3"
+    read-config-file "^1.0.5"
     sanitize-filename "^1.6.1"
     semver "^5.4.1"
+    temp-file "^1.0.1"
     update-notifier "^2.2.0"
     uuid-1345 "^0.99.6"
     yargs "^8.0.2"
@@ -2387,26 +2454,25 @@ electron-localshortcut@^2.0.0:
     debug "^2.6.8"
     electron-is-accelerator "^0.1.0"
 
-electron-osx-sign@0.4.6:
-  version "0.4.6"
-  resolved "http://registry.npm.taobao.org/electron-osx-sign/download/electron-osx-sign-0.4.6.tgz#2398e2d7cab5c1d8c3eeabb1cd490376528ec39a"
+electron-osx-sign@0.4.7:
+  version "0.4.7"
+  resolved "http://registry.npm.taobao.org/electron-osx-sign/download/electron-osx-sign-0.4.7.tgz#1d75647a82748eacd48bea70616ec83ffade3ee5"
   dependencies:
-    bluebird "^3.4.7"
+    bluebird "^3.5.0"
     compare-version "^0.1.2"
-    debug "^2.6.1"
+    debug "^2.6.8"
     isbinaryfile "^3.0.2"
     minimist "^1.2.0"
-    plist "^2.0.1"
-    tempfile "^1.1.1"
+    plist "^2.1.0"
 
-electron-publish@19.19.0:
-  version "19.19.0"
-  resolved "http://registry.npm.taobao.org/electron-publish/download/electron-publish-19.19.0.tgz#06d6b6fce2454abef0483443a14ad50d828f8b67"
+electron-publish@19.21.0:
+  version "19.21.0"
+  resolved "http://registry.npm.taobao.org/electron-publish/download/electron-publish-19.21.0.tgz#1368d01fd325f6e1b4b25e17098e5e77ed4d71ad"
   dependencies:
-    bluebird-lst "^1.0.2"
-    chalk "^2.0.1"
-    electron-builder-http "~19.19.0"
-    electron-builder-util "~19.19.0"
+    bluebird-lst "^1.0.3"
+    chalk "^2.1.0"
+    electron-builder-http "~19.21.0"
+    electron-builder-util "~19.21.0"
     fs-extra-p "^4.4.0"
     mime "^1.3.6"
 
@@ -2414,9 +2480,9 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.16:
   version "1.3.16"
   resolved "http://registry.npm.taobao.org/electron-to-chromium/download/electron-to-chromium-1.3.16.tgz#d0e026735754770901ae301a21664cba45d92f7d"
 
-electron@^1.7.2:
-  version "1.7.5"
-  resolved "http://registry.npm.taobao.org/electron/download/electron-1.7.5.tgz#065a3102bf8b87102df50c50985fefe6c569045b"
+electron@^1.7.6:
+  version "1.7.6"
+  resolved "http://registry.npm.taobao.org/electron/download/electron-1.7.6.tgz#fb69ea31bd03df0eff247f26f0b538bd29b6ee72"
   dependencies:
     "@types/node" "^7.0.18"
     electron-download "^3.0.1"
@@ -3000,7 +3066,7 @@ fresh@0.5.0:
   version "0.5.0"
   resolved "http://registry.npm.taobao.org/fresh/download/fresh-0.5.0.tgz#f474ca5e6a9246d6fd8e0953cfa9b9c805afa78e"
 
-fs-extra-p@^4.3.0, fs-extra-p@^4.4.0:
+fs-extra-p@^4.4.0:
   version "4.4.0"
   resolved "http://registry.npm.taobao.org/fs-extra-p/download/fs-extra-p-4.4.0.tgz#729c601c4f4c701328921adc7cfe9b236f100660"
   dependencies:
@@ -3219,6 +3285,17 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.6, graceful-fs@^4.1.9:
 "graceful-readlink@>= 1.0.0":
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/graceful-readlink/download/graceful-readlink-1.0.1.tgz#4cafad76bc62f02fa039b2f94e9a3dd3a391a725"
+
+gulp-insert@^0.5.0:
+  version "0.5.0"
+  resolved "http://registry.npm.taobao.org/gulp-insert/download/gulp-insert-0.5.0.tgz#32313f13e4a23cf5acca5ce5f0c080923c778602"
+  dependencies:
+    readable-stream "^1.0.26-4"
+    streamqueue "0.0.6"
+
+gulp-rename@^1.2.2:
+  version "1.2.2"
+  resolved "http://registry.npm.taobao.org/gulp-rename/download/gulp-rename-1.2.2.tgz#3ad4428763f05e2764dec1c67d868db275687817"
 
 handle-thing@^1.2.5:
   version "1.2.5"
@@ -3575,7 +3652,7 @@ is-binary-path@^1.0.0:
   dependencies:
     binary-extensions "^1.0.0"
 
-is-buffer@^1.0.2, is-buffer@^1.1.5:
+is-buffer@^1.0.2, is-buffer@^1.1.5, is-buffer@~1.1.1:
   version "1.1.5"
   resolved "http://registry.npm.taobao.org/is-buffer/download/is-buffer-1.1.5.tgz#1f3b26ef613b214b88cbca23cc6c01d87961eecc"
 
@@ -3838,7 +3915,7 @@ js-tokens@^3.0.0:
   version "3.0.2"
   resolved "http://registry.npm.taobao.org/js-tokens/download/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-yaml@^3.4.3, js-yaml@^3.5.1, js-yaml@^3.9.0, js-yaml@^3.9.1:
+js-yaml@^3.4.3, js-yaml@^3.5.1, js-yaml@^3.9.1:
   version "3.9.1"
   resolved "http://registry.npm.taobao.org/js-yaml/download/js-yaml-3.9.1.tgz#08775cebdfdd359209f0d2acd383c8f86a6904a0"
   dependencies:
@@ -3967,6 +4044,10 @@ lazy-cache@^0.2.3:
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "http://registry.npm.taobao.org/lazy-cache/download/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
+
+lazy-val@^1.0.2:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/lazy-val/download/lazy-val-1.0.2.tgz#d9b07fb1fce54cbc99b3c611de431b83249369b6"
 
 lcid@^1.0.0:
   version "1.0.0"
@@ -4261,6 +4342,13 @@ lru-cache@^4.0.1:
     pseudomap "^1.0.2"
     yallist "^2.1.2"
 
+lrz@^4.9.40:
+  version "4.9.40"
+  resolved "http://registry.npm.taobao.org/lrz/download/lrz-4.9.40.tgz#2fd3b42588a20a57fd7aa79f81568c845e4e3d73"
+  dependencies:
+    gulp-insert "^0.5.0"
+    gulp-rename "^1.2.2"
+
 macaddress@^0.2.7, macaddress@^0.2.8:
   version "0.2.8"
   resolved "http://registry.npm.taobao.org/macaddress/download/macaddress-0.2.8.tgz#5904dc537c39ec6dbefeae902327135fa8511f12"
@@ -4278,6 +4366,14 @@ map-obj@^1.0.0, map-obj@^1.0.1:
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
   resolved "http://registry.npm.taobao.org/math-expression-evaluator/download/math-expression-evaluator-1.2.17.tgz#de819fdbcd84dccd8fae59c6aeb79615b9d266ac"
+
+md5@^2.2.1:
+  version "2.2.1"
+  resolved "http://registry.npm.taobao.org/md5/download/md5-2.2.1.tgz#53ab38d5fe3c8891ba465329ea23fac0540126f9"
+  dependencies:
+    charenc "~0.0.1"
+    crypt "~0.0.1"
+    is-buffer "~1.1.1"
 
 media-typer@0.3.0:
   version "0.3.0"
@@ -4412,6 +4508,10 @@ mkdirp@0.5.1, mkdirp@0.5.x, "mkdirp@>=0.5 0", mkdirp@^0.5.0, mkdirp@^0.5.1, mkdi
   resolved "http://registry.npm.taobao.org/mkdirp/download/mkdirp-0.5.1.tgz#30057438eac6cf7f8c4767f38648d6697d75c903"
   dependencies:
     minimist "0.0.8"
+
+moment@^2.18.1:
+  version "2.18.1"
+  resolved "http://registry.npm.taobao.org/moment/download/moment-2.18.1.tgz#c36193dd3ce1c2eed2adb7c802dbbc77a81b1c0f"
 
 ms@0.7.1:
   version "0.7.1"
@@ -4943,13 +5043,17 @@ pkg-dir@^2.0.0:
   dependencies:
     find-up "^2.1.0"
 
-plist@^2.0.1, plist@^2.1.0:
+plist@^2.1.0:
   version "2.1.0"
   resolved "http://registry.npm.taobao.org/plist/download/plist-2.1.0.tgz#57ccdb7a0821df21831217a3cad54e3e146a1025"
   dependencies:
     base64-js "1.2.0"
     xmlbuilder "8.2.2"
     xmldom "0.1.x"
+
+plupload@^2.3.2:
+  version "2.3.2"
+  resolved "http://registry.npm.taobao.org/plupload/download/plupload-2.3.2.tgz#925bc782c04171829491d887c3cb343f97ee39ce"
 
 pluralize@^1.2.1:
   version "1.2.1"
@@ -5342,6 +5446,10 @@ q@^1.1.2:
   version "1.5.0"
   resolved "http://registry.npm.taobao.org/q/download/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"
 
+qiniu-js@^1.0.21:
+  version "1.0.21"
+  resolved "http://registry.npm.taobao.org/qiniu-js/download/qiniu-js-1.0.21.tgz#34c4276d945b470b862455aa37e2f777a2c9ad76"
+
 qs@6.4.0, qs@~6.4.0:
   version "6.4.0"
   resolved "http://registry.npm.taobao.org/qs/download/qs-6.4.0.tgz#13e26d28ad6b0ffaa91312cd3bf708ed351e7233"
@@ -5395,14 +5503,15 @@ rc@^1.0.1, rc@^1.1.2, rc@^1.1.6, rc@^1.1.7, rc@^1.2.1:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
-read-config-file@^0.1.3:
-  version "0.1.3"
-  resolved "http://registry.npm.taobao.org/read-config-file/download/read-config-file-0.1.3.tgz#10f72ad95159864c78def8c749b226f80c998b61"
+read-config-file@^1.0.5:
+  version "1.0.5"
+  resolved "http://registry.npm.taobao.org/read-config-file/download/read-config-file-1.0.5.tgz#9992d2a4d24a993518e7eb6f3c30c0562264c367"
   dependencies:
-    bluebird-lst "^1.0.2"
+    bluebird-lst "^1.0.3"
     fs-extra-p "^4.4.0"
-    js-yaml "^3.9.0"
+    js-yaml "^3.9.1"
     json5 "^0.5.1"
+    lazy-val "^1.0.2"
 
 read-pkg-up@^1.0.1:
   version "1.0.1"
@@ -5443,6 +5552,15 @@ readable-stream@1.0:
     isarray "0.0.1"
     string_decoder "~0.10.x"
 
+readable-stream@^1.0.26-2, readable-stream@^1.0.26-4, readable-stream@~1.1.9:
+  version "1.1.14"
+  resolved "http://registry.npm.taobao.org/readable-stream/download/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
+  dependencies:
+    core-util-is "~1.0.0"
+    inherits "~2.0.1"
+    isarray "0.0.1"
+    string_decoder "~0.10.x"
+
 readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable-stream@^2.0.6, readable-stream@^2.1.4, readable-stream@^2.2.2, readable-stream@^2.2.6, readable-stream@^2.2.9:
   version "2.3.3"
   resolved "http://registry.npm.taobao.org/readable-stream/download/readable-stream-2.3.3.tgz#368f2512d79f9d46fdfc71349ae7878bbc1eb95c"
@@ -5454,15 +5572,6 @@ readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.5, readable
     safe-buffer "~5.1.1"
     string_decoder "~1.0.3"
     util-deprecate "~1.0.1"
-
-readable-stream@~1.1.9:
-  version "1.1.14"
-  resolved "http://registry.npm.taobao.org/readable-stream/download/readable-stream-1.1.14.tgz#7cf4c54ef648e3813084c636dd2079e166c081d9"
-  dependencies:
-    core-util-is "~1.0.0"
-    inherits "~2.0.1"
-    isarray "0.0.1"
-    string_decoder "~0.10.x"
 
 readdirp@^2.0.0:
   version "2.1.0"
@@ -6054,6 +6163,12 @@ stream-http@^2.3.1:
     to-arraybuffer "^1.0.0"
     xtend "^4.0.0"
 
+streamqueue@0.0.6:
+  version "0.0.6"
+  resolved "http://registry.npm.taobao.org/streamqueue/download/streamqueue-0.0.6.tgz#66f5f5ec94e9b8af249e4aec2dd1f741bfe94de3"
+  dependencies:
+    readable-stream "^1.0.26-2"
+
 strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "http://registry.npm.taobao.org/strict-uri-encode/download/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
@@ -6224,12 +6339,14 @@ tar@^2.0.0, tar@^2.2.1:
     fstream "^1.0.2"
     inherits "2"
 
-tempfile@^1.1.1:
-  version "1.1.1"
-  resolved "http://registry.npm.taobao.org/tempfile/download/tempfile-1.1.1.tgz#5bcc4eaecc4ab2c707d8bc11d99ccc9a2cb287f2"
+temp-file@^1.0.1:
+  version "1.0.2"
+  resolved "http://registry.npm.taobao.org/temp-file/download/temp-file-1.0.2.tgz#790ac9093b9d12a84f277f42f6314e0cf579f1c7"
   dependencies:
-    os-tmpdir "^1.0.0"
-    uuid "^2.0.1"
+    async-exit-hook "^2.0.1"
+    bluebird-lst "^1.0.3"
+    fs-extra-p "^4.4.0"
+    lazy-val "^1.0.2"
 
 term-size@^1.2.0:
   version "1.2.0"
@@ -6524,11 +6641,11 @@ uuid-1345@^0.99.6:
   dependencies:
     macaddress "^0.2.7"
 
-uuid@^2.0.1, uuid@^2.0.2:
+uuid@^2.0.2:
   version "2.0.3"
   resolved "http://registry.npm.taobao.org/uuid/download/uuid-2.0.3.tgz#67e2e863797215530dff318e5bf9dcebfd47b21a"
 
-uuid@^3.0.0:
+uuid@^3.0.0, uuid@^3.1.0:
   version "3.1.0"
   resolved "http://registry.npm.taobao.org/uuid/download/uuid-3.1.0.tgz#3dd3d3e790abc24d7b0d3a034ffababe28ebbc04"
 
@@ -6630,6 +6747,10 @@ vue@^2.3.3:
 vuex@^2.3.1:
   version "2.3.1"
   resolved "http://registry.npm.taobao.org/vuex/download/vuex-2.3.1.tgz#cde8e997c1f9957719bc7dea154f9aa691d981a6"
+
+wangeditor@^3.0.7:
+  version "3.0.7"
+  resolved "http://registry.npm.taobao.org/wangeditor/download/wangeditor-3.0.7.tgz#f23693c34332a8e0b1697c00b05b3a52ffaafa75"
 
 watchpack@^1.3.1:
   version "1.4.0"
