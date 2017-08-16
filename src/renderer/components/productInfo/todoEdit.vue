@@ -45,6 +45,13 @@ export default {
     this.getAllUser()
   },
   methods: {
+    busEmit () {
+      if (this.$route.name === 'ProductAllPost') {
+        this.$bus.emit('changeAllPostLevel', 'changeAllPostLevel')
+      } else {
+        this.$bus.emit('changeLevel', 'changeLevel')
+      }
+    },
     hideImg () {
       // this.isShowImg = !this.isShowImg
       this.isShowImg = true
@@ -154,9 +161,10 @@ export default {
         this.modal_create_loading = false
         this.isPoint = false
         if (res.data.code === 0) {
-          this.getAllLog()
+          // this.getAllLog()
           this.restFromData()
           this.$Message.success('指派成功')
+          this.busEmit()
         }
       })
     },
@@ -176,9 +184,10 @@ export default {
         this.modal_create_loading = false
         this.isFinish = false
         if (res.data.code === 0) {
-          this.getAllLog()
+          // this.getAllLog()
           this.restFromData()
           this.$Message.success('完成')
+          this.busEmit()
         }
       })
     },
@@ -202,6 +211,7 @@ export default {
             this.getAllLog()
             this.restFromData()
             this.$Message.success('完成')
+            this.busEmit()
           }
         })
       }

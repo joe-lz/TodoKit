@@ -31,6 +31,11 @@ export default {
         this.isEdit = false
       })
     })
+    // 改变后，刷新页面
+    this.$bus.on('changeLevel', content => {
+      this.changeMode()
+      this.isEdit = false
+    })
   },
   methods: {
     handleEdit (item) {

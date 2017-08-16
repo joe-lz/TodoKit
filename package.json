@@ -67,6 +67,7 @@
     "sass-loader": "^6.0.6",
     "uuid": "^3.1.0",
     "vue": "^2.3.3",
+    "vue-bus": "^1.0.0",
     "vue-electron": "^1.0.6",
     "vue-router": "^2.5.3",
     "vue-socket.io": "^2.1.1-a",

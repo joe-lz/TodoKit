@@ -131,3 +131,7 @@ NewTask: {
   content: ''
 },
 NewLog
+
+import { remote } from 'electron'
+let win = remote.getCurrentWindow()
+win.setBounds({width: 100, height: 100}, true)

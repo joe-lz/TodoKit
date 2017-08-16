@@ -7,7 +7,7 @@
       //- Form-item.input-wrapper(label='Logo')
       //-   Input(size='large' v-model='formData.logo')
       //- p {{formData.logo}}
-      Form-item.input-wrapper(label='Logo' v-if='formData.logo')
+      Form-item.input-wrapper(label='Logo')
         ImgUpload(:folderName='`productlogo/`', 
         :img='formData.logo', 
         :picroot='$api.link.qiniuUrl',

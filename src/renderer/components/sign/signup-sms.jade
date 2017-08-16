@@ -1,5 +1,5 @@
 .one-wrapper(style='-webkit-app-region: drag')
-  Form.form-wrapper(:label-width="60", :rules="ruleValidate", ref="formData", :model="formData")
+  Form.form-wrapper(:label-width="60", :rules="ruleValidate", ref="formData", :model="formData" style='-webkit-app-region: no-drag')
     img.logo(:src="$api.link.logo", alt="")
     Form-item.input-wrapper(label='手机' prop="mobile")
       Input(size='large' v-model='formData.mobile')

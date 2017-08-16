@@ -11,9 +11,12 @@
         router-link(:to='{name: "ProductTodo"}' exact)
           i.iconfont.icon-daiban
           span 我的任务
-        //- router-link(:to='{name: "ProductTodo"}' exact)
-        //-   i.iconfont.icon-bug828
-        //-   span Bug
+        router-link(:to='{name: "ProductTodoL"}' exact)
+          i.iconfont.icon-daiban
+          span 我的任务L
+        router-link(:to='{name: "ProductTodoM"}' exact)
+          i.iconfont.icon-daiban
+          span 我的任务M
         router-link(:to='{name: "ProductNotification"}' exact)
           i.iconfont.icon-xiaoxi
           span 消息中心

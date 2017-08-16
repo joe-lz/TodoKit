@@ -25,6 +25,11 @@ export default {
         this.isEdit = false
       })
     })
+    // 改变后，刷新页面
+    this.$bus.on('changeAllPostLevel', content => {
+      this.getAllData(this.$route.query.level)
+      this.isEdit = false
+    })
   },
   methods: {
     handleEdit (item) {

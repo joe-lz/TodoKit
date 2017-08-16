@@ -19,14 +19,12 @@ export default {
   },
   sockets: {
     connect () {  // 这里是监听connect事件
-      // this.id = this.$socket.id
       console.log('socket connect')
-      console.log(this.$socket.id)
+      // console.log(this.$socket.id)
     },
     NewPost (val) {
-      console.log(val)
       if (this.curUserId === val.to) {
-        let myNotification = new Notification('新任务', {
+        let myNotification = new Notification('任务', {
           body: val.content
         })
         console.log(myNotification)
@@ -36,13 +34,22 @@ export default {
       // }
     },
     NewLog (val) {
-      console.log(this.curUserId)
-      console.log(val.to)
       if (this.curUserId === val.to) {
-        let myNotification = new Notification('新消息', {
+        let myNotification = new Notification('评论', {
           body: val.content
         })
         console.log(myNotification)
+      }
+    },
+    NewProduct (val) {
+      if (this.curUserId === val.to) {
+        let myNotification = new Notification('消息', {
+          body: val.content
+        })
+        console.log(myNotification)
+        setTimeout(() => {
+          window.location.reload()
+        }, 500)
       }
     }
   },

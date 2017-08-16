@@ -6821,6 +6821,10 @@ void-elements@~2.0.1:
   version "2.0.1"
   resolved "http://registry.npm.taobao.org/void-elements/download/void-elements-2.0.1.tgz#c066afb582bb1cb4128d60ea92392e94d5e9dbec"
 
+vue-bus@^1.0.0:
+  version "1.0.0"
+  resolved "http://registry.npm.taobao.org/vue-bus/download/vue-bus-1.0.0.tgz#905835820fd4cb28a1194221957bca8f8cd745bc"
+
 vue-electron@^1.0.6:
   version "1.0.6"
   resolved "http://registry.npm.taobao.org/vue-electron/download/vue-electron-1.0.6.tgz#e798e03180b8933539defe31f92e53b9242b9406"
