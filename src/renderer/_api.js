@@ -44,10 +44,14 @@ let GetLocal = function (name) {
   return JSON.parse(window.localStorage.getItem(name))
 }
 
-let root = 'http://127.0.0.1:4100/v1'
-// let root = 'http://pmapi-t.qaf.io/v1'
+// let root = 'http://127.0.0.1:4100/v1'
+// let apiRoot = 'http://127.0.0.1:4100'
+let root = 'http://pmapi-t.qaf.io/v1'
+let apiRoot = 'http://pmapi-t.qaf.io'
 
 export default {
+  apiRoot,
+  root,
   brand: 'pm',
   SetAuth,
   GetAuth,

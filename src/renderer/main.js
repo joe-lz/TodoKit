@@ -15,7 +15,7 @@ Vue.prototype.$api = api
 Vue.use(iView)
 Vue.prototype.$moment = moment
 Vue.prototype.$_ = _
-Vue.use(VueSocketio, 'http://127.0.0.1:4100')
+Vue.use(VueSocketio, api.apiRoot)
 // -----------------------------------------------------------------------------------------------
 axios.interceptors.request.use((config) => {
   // Do something before request is sent
