@@ -24,9 +24,8 @@ export default {
     this.changeType(0)
     // 改变后，刷新页面
     this.busEventRouteName()
-    this.$bus.on('changeType', content => {
-      this.changeType(content)
-    })
+    // 改变type后
+    this.busEventChangeType()
   },
   methods: {
     busEventRouteName () {
@@ -35,6 +34,13 @@ export default {
       this.$bus.once(this.$route.name, content => {
         console.log(content)
         this.changeType(this.type)
+      })
+    },
+    busEventChangeType () {
+      // this.$bus.off('changeType')
+      this.$bus.on('changeType', content => {
+        console.log(content)
+        this.changeType(content)
       })
     },
     reset () {
