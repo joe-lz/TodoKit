@@ -46,7 +46,7 @@ export default {
   },
   methods: {
     busEmit () {
-      this.$bus.emit(this.page, this.page)
+      this.$bus.emit(this.$route.name, this.page)
     },
     hideImg () {
       this.isShowImg = true

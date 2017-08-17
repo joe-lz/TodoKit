@@ -27,7 +27,7 @@ export default {
       })
     })
     // 改变后，刷新页面
-    this.$bus.on(this.$route.name, content => {
+    this.$bus.once(this.$route.name, content => {
       this.isEdit = false
       console.log(content)
       this.changeType(this.type)
@@ -40,6 +40,9 @@ export default {
       }
     })
   },
+  // destory () {
+  //   this.$bus.off(this.$route.name)
+  // },
   methods: {
     reset () {
       this.allData = []
