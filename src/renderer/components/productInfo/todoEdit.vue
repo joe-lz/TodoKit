@@ -5,7 +5,7 @@
 <script>
 export default {
   name: 'TodoEdit',
-  props: ['curPost'],
+  props: ['curPost', 'page'],
   data () {
     return {
       isShowImg: false,
@@ -46,11 +46,7 @@ export default {
   },
   methods: {
     busEmit () {
-      if (this.$route.name === 'ProductAllPost') {
-        this.$bus.emit('changeAllPostLevel', 'changeAllPostLevel')
-      } else {
-        this.$bus.emit('changeLevel', 'changeLevel')
-      }
+      this.$bus.emit(this.page, 'content')
     },
     hideImg () {
       // this.isShowImg = !this.isShowImg

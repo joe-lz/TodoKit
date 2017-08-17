@@ -1,1 +1,10 @@
-p todoM
+.section-wrapper
+  .section-content
+    .matrix-wrapper
+      TodoMItem(:isImportant='true', :isUrgent='true', direction='left')
+      TodoMItem(:isImportant='true', :isUrgent='false', direction='right')
+    .matrix-wrapper
+      TodoMItem(:isImportant='false', :isUrgent='true', direction='left')
+      TodoMItem(:isImportant='false', :isUrgent='false', direction='right')
+  TodoEdit.todoEdit-wrapper.right(v-if='direction === "right"', :curPost='curPost', :page='$route.name', :class='{"isEdit": isEdit}')
+  TodoEdit.todoEdit-wrapper(v-else, :curPost='curPost', :page='$route.name', :class='{"isEdit": isEdit}')

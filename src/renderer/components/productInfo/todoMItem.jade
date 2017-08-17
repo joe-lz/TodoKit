@@ -1,0 +1,15 @@
+.block-wrapper
+  .matrix-title
+    span(v-if='isImportant') 重要
+    span(v-else) 不重要
+    | ／
+    span(v-if='isUrgent') 紧急
+    span(v-else) 不紧急
+  .lists
+    .item-wrapper(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')
+      span.title(v-text='item.title')
+      .state
+        span.type(v-if='item.type == 1') Bug
+        span.type.newNeed(v-else-if='item.type == 2') 需求
+    .loadMore(@click='getAllData' v-if='this.nextPageNo > 0') 加载更多
+  NoData(v-if='allData && allData.length == 0')

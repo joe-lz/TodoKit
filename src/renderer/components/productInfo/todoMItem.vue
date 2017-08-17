@@ -1,18 +1,19 @@
-<template lang="jade" src='./todoL.jade'></template>
+<template lang="jade" src='./todoMItem.jade'>
+
+</template>
 
 <script>
-import TodoEdit from './todoEdit'
 import NoData from '@/components/_include/nodata'
 export default {
-  name: 'ProductTodoL',
+  name: 'TodoMItem',
   components: {
-    TodoEdit, NoData
+    NoData
   },
+  props: ['isImportant', 'isUrgent', 'direction'],
   data () {
     return {
       allData: [],
       curPost: {},
-      isEdit: false,
       selected: '',
       nextPageNo: 1,
       pageSize: this.$api.pageSize
@@ -20,22 +21,12 @@ export default {
   },
   created () {
     this.getAllData()
-    this.$nextTick(() => {
-      window.addEventListener('click', () => {
-        this.isEdit = false
-      })
-    })
     // 改变后，刷新页面
-    this.$bus.on(this.$route.name, content => {
-      this.isEdit = false
-      this.refresh()
-    })
   },
   methods: {
     reset () {
       this.allData = []
       this.curPost = {}
-      this.isEdit = false
       this.selected = ''
       this.nextPageNo = 1
       this.pageSize = this.$api.pageSize
@@ -45,10 +36,12 @@ export default {
         this.$Message.error('没有更多数据了!')
         return
       }
-      let url = this.$api.postMy
+      let url = this.$api.postMyMatrix
       let body = {
         data: {
           productId: this.$route.params.id,
+          isImportant: this.isImportant,
+          isUrgent: this.isUrgent,
           nextPageNo: this.nextPageNo,
           pageSize: this.pageSize
         }
@@ -63,8 +56,8 @@ export default {
     },
     handleEdit (item) {
       this.selected = item._id
-      this.isEdit = true
-      this.curPost = item
+      item.direction = this.direction
+      this.$bus.emit('curPost', item)
     },
     refresh () {
       this.reset()
@@ -74,5 +67,5 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped src='./todoL.sass'>
+<style lang="sass" scoped src='./todoMItem.sass'>
 </style>

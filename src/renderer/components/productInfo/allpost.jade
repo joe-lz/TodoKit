@@ -13,5 +13,6 @@
       .state
         span.type(v-if='item.type == 1') Bug
         span.type.newNeed(v-else-if='item.type == 2') 需求
+      span.poinTto {{item.to.name}}
   NoData(v-else)
-  TodoEdit.todoEdit-wrapper(:curPost='curPost', :class='{"isEdit": isEdit}')
+  TodoEdit.todoEdit-wrapper(:curPost='curPost', :page='$route.name', :class='{"isEdit": isEdit}')

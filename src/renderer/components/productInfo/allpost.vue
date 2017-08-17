@@ -26,9 +26,9 @@ export default {
       })
     })
     // 改变后，刷新页面
-    this.$bus.on('changeAllPostLevel', content => {
-      this.getAllData(this.$route.query.level)
+    this.$bus.on(this.$route.name, content => {
       this.isEdit = false
+      this.refresh()
     })
   },
   methods: {
@@ -50,6 +50,9 @@ export default {
           this.allData = res.data.data.allData
         }
       })
+    },
+    refresh () {
+      this.getAllData(this.$route.query.level)
     }
   },
   watch: {
@@ -64,5 +67,5 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped src='./todo.sass'>
+<style lang="sass" scoped src='./allpost.sass'>
 </style>

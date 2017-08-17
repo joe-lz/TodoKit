@@ -1,1 +1,16 @@
-p todoL
+.section-wrapper
+  TodoEdit.todoEdit-wrapper(:curPost='curPost', :page='$route.name', :class='{"isEdit": isEdit}')
+  .section-content
+    .item-wrapper(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')
+      .state
+        span.isImportant(v-if='item.isImportant') 重要
+        span.not(v-else) -
+        span.isUrgent(v-if='item.isUrgent') 紧急
+        span.not(v-else) -
+      span.title(v-text='item.title')
+      .state
+        span.type(v-if='item.type == 1') Bug
+        span.type.newNeed(v-else-if='item.type == 2') 需求
+      
+    .loadMore(@click='getAllData' v-if='this.nextPageNo > 0') 加载更多
+    NoData(v-if='allData && allData.length == 0')
