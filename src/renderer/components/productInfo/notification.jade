@@ -1,27 +1,19 @@
 .section-wrapper
+  .navigation-wrapper
+    .button-group
+      button(@click='changeType(0)', :class='{"active": type==0}') 未读
+      button(@click='changeType(1)', :class='{"active": type==1}') 已读
   .section-content
-    Tabs
-      Tab-pane(label="未读" name="name1")
-        .item-wrapper(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')
-          span.from {{item.from.name || $api.placeholder.noname}}
-          span.action(v-if='item.action == 1') 指派给
-          span.action(v-if='item.action == 2') 完成，并指派给
-          span.action(v-if='item.action == 3') 拒绝
-          span.action(v-if='item.action == 4') 评论
-          span.to 我
-          span.content(v-if='item.content') "{{item.content}}"
-          span.time {{item.createdAt}}
-        NoData(v-if='allData && allData.length == 0')
-      Tab-pane(label="已读" name="name2")
-        .item-wrapper.isRead(v-for='item of allDataRead' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')
-          span.from {{item.from.name || $api.placeholder.noname}}
-          span.action(v-if='item.action == 1') 指派给
-          span.action(v-if='item.action == 2') 完成，并指派给
-          span.action(v-if='item.action == 3') 拒绝
-          span.action(v-if='item.action == 4') 评论
-          span.to 我
-          span.content(v-if='item.content') "{{item.content}}"
-          span.time {{item.createdAt}}
-        NoData(v-if='allDataRead && allDataRead.length == 0')
+    .item-wrapper(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id, "isRead": item.isRead}')
+      span.from {{item.from.name || $api.placeholder.noname}}
+      span.action(v-if='item.action == 1') 指派给
+      span.action(v-if='item.action == 2') 完成，并指派给
+      span.action(v-if='item.action == 3') 拒绝
+      span.action(v-if='item.action == 4') 评论
+      span.to 我
+      span.content(v-if='item.content') "{{item.content}}"
+      span.time {{item.createdAt}}
+  .loadMore(@click='getAllData' v-if='allData && allData.length > 0 && nextPageNo > 0') 加载更多
+  NoData(v-if='allData && allData.length == 0 && nextPageNo==0')
   
   TodoEdit.todoEdit-wrapper(:curPost='curPost', :class='{"isEdit": isEdit}')

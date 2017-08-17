@@ -17,5 +17,5 @@
         span.type(v-if='item.type == 1') Bug
         span.type.newNeed(v-else-if='item.type == 2') 需求
       
-    .loadMore(@click='getAllData' v-if='allData && allData.length > 0 && nextPageNo > 0') 加载更多
-    NoData(v-if='allData && allData.length == 0')
+  .loadMore(@click='getAllData' v-if='allData && allData.length > 0 && nextPageNo > 0') 加载更多
+  NoData(v-if='allData && allData.length == 0 && nextPageNo==0')

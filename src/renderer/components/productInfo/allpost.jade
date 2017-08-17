@@ -17,5 +17,5 @@
         span.type.newNeed(v-else-if='item.type == 2') 需求
       span.poinTto {{item.to.name}}
   .loadMore(@click='getAllData' v-if='allData && allData.length > 0 && nextPageNo > 0') 加载更多
-  NoData(v-if='allData && allData.length == 0')
+  NoData(v-if='allData && allData.length == 0 && nextPageNo==0')
   TodoEdit.todoEdit-wrapper(:curPost='curPost', :page='$route.name', :class='{"isEdit": isEdit}')
