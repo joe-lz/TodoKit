@@ -14,10 +14,12 @@ export default {
   data () {
     return {
       isFullStack: false,
-      stateInfo: {}
+      stateInfo: {},
+      isMatrix: false
     }
   },
   created () {
+    this.changeMode()
     this.getProductStateInfo(this.$route.params.id)
   },
   methods: {
@@ -33,6 +35,14 @@ export default {
           this.stateInfo = res.data.data
         }
       })
+    },
+    changeMode () {
+      this.isMatrix = this.$api.GetLocal('isMatrix')
+      this.$bus.emit('changeMode', this.isMatrix)
+    },
+    handleIsMatrix () {
+      this.$api.SetLocal('isMatrix', this.isMatrix)
+      this.changeMode()
     }
   },
   watch: {

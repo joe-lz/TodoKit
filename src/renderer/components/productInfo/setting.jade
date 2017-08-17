@@ -4,9 +4,6 @@
     Form.form-wrapper(:label-width="60", ref="formData", :model="formData")
       Form-item.input-wrapper(label='产品名称')
         Input(size='large' v-model='formData.name')
-      //- Form-item.input-wrapper(label='Logo')
-      //-   Input(size='large' v-model='formData.logo')
-      //- p {{formData.logo}}
       Form-item.input-wrapper(label='Logo')
         ImgUpload(:folderName='`productlogo/`', 
         :img='formData.logo', 

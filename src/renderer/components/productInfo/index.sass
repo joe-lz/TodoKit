@@ -15,6 +15,18 @@ $sidebar-width: 180px
       width: $sidebar-width
       height: 100%
       background: $bg-youtube
+      .isMatrix-wrapper
+        position: fixed
+        bottom: 0
+        left: 40px
+        z-index: 10
+        padding: 10px
+        text-align: center
+        .title
+          margin-right: 5px
+        &.true
+          .title
+            color: $gray
       .mode-wrapper
         position: absolute
         bottom: 10px
@@ -67,11 +79,7 @@ $sidebar-width: 180px
           height: 4px
           border-radius: 2px
           background: $red
-        .isMatrix
-          position: relative
-          top: 15px
-          right: 5px
-          float: right
+
     .main-wrapper
       padding-left: $sidebar-width
       height: 100%
@@ -81,7 +89,13 @@ $sidebar-width: 180px
   .one-wrapper
     .two-wrapper
       .sidebar-wrapper
-        width: 50px
+        width: 60px
+        .isMatrix-wrapper
+          left: 0
+          padding: 5px
+          .title
+            display: none
+          &.true
         .con-title
           display: none
         a
@@ -99,7 +113,7 @@ $sidebar-width: 180px
             right: 10px
             left: initial
       .main-wrapper
-        padding-left: 50px
+        padding-left: 60px
 
 @include small-screen
   .one-wrapper

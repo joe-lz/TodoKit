@@ -13,7 +13,6 @@ export default {
   data () {
     return {
       qiniutoken: '',
-      curValue: '',
       isLoading: false
     }
   },
@@ -21,12 +20,13 @@ export default {
     this.$nextTick(() => {
       this.getToken()
     })
-    this.setCurrentValue()
+  },
+  computed: {
+    curValue () {
+      return this.img
+    }
   },
   methods: {
-    setCurrentValue () {
-      this.curValue = this.img
-    },
     getToken () {
       let url = this.$api.qiniutoken
       let body = {}

@@ -9,7 +9,6 @@ const SignUpSMS = resolve => require(['@/components/sign/signup-sms'], resolve)
 const UserSetting = resolve => require(['@/components/user/setting'], resolve)
 const ProductInfo = resolve => require(['@/components/productInfo'], resolve)
 const ProductCreate = resolve => require(['@/components/productInfo/create'], resolve)
-const ProductTodo = resolve => require(['@/components/productInfo/todo'], resolve)
 const ProductTodoL = resolve => require(['@/components/productInfo/todoL'], resolve)
 const ProductTodoM = resolve => require(['@/components/productInfo/todoM'], resolve)
 const ProductMember = resolve => require(['@/components/productInfo/member'], resolve)
@@ -29,9 +28,8 @@ export default new Router({
     { path: '/product/:id',
       component: ProductInfo,
       children: [
-        { path: '', name: 'ProductInfo', redirect: {name: 'ProductTodo'} },
+        { path: '', name: 'ProductInfo', redirect: {name: 'ProductTodoL'} },
         { path: 'create', name: 'ProductCreate', component: ProductCreate, meta: { requireAuth: true } },
-        { path: 'todo', name: 'ProductTodo', component: ProductTodo, meta: { requireAuth: true } },
         { path: 'todoL', name: 'ProductTodoL', component: ProductTodoL, meta: { requireAuth: true } },
         { path: 'todoM', name: 'ProductTodoM', component: ProductTodoM, meta: { requireAuth: true } },
         { path: 'member', name: 'ProductMember', component: ProductMember, meta: { requireAuth: true } },

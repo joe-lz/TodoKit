@@ -25,13 +25,19 @@ export default {
     // 更新完成后刷新
     this.$bus.on(this.$route.name, content => {
       this.isEdit = false
-      // this.refresh()
+      this.$bus.emit('refreshTodoMItem', true)
     })
     // 子组建传递curPost过来
     this.$bus.on('curPost', content => {
       this.curPost = content
       this.isEdit = true
       this.direction = content.direction
+    })
+    // 改变模式
+    this.$bus.on('changeMode', content => {
+      if (!content) {
+        this.$router.push({name: 'ProductTodoL'})
+      }
     })
   },
   methods: {

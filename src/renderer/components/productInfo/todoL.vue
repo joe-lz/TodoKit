@@ -30,6 +30,12 @@ export default {
       this.isEdit = false
       this.refresh()
     })
+    // 改变模式
+    this.$bus.on('changeMode', content => {
+      if (content) {
+        this.$router.push({name: 'ProductTodoM'})
+      }
+    })
   },
   methods: {
     reset () {

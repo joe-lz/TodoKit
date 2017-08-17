@@ -22,6 +22,9 @@ export default {
   created () {
     this.getAllData()
     // 改变后，刷新页面
+    this.$bus.on('refreshTodoMItem', content => {
+      this.refresh()
+    })
   },
   methods: {
     reset () {
