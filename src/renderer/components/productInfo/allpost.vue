@@ -29,12 +29,17 @@ export default {
       })
     })
     // 改变后，刷新页面
-    this.$bus.on(this.$route.name, content => {
-      this.isEdit = false
-      this.changeType(this.type)
-    })
+    this.busEventRouteName()
   },
   methods: {
+    busEventRouteName () {
+      this.$bus.off(this.$route.name)
+      this.$bus.once(this.$route.name, content => {
+        this.isEdit = false
+        console.log(content)
+        this.changeType(this.type)
+      })
+    },
     reset () {
       this.allData = []
       this.curPost = {}
@@ -45,6 +50,7 @@ export default {
       this.pageSize = this.$api.pageSize
     },
     handleEdit (item) {
+      this.busEventRouteName()
       this.selected = item._id
       this.isEdit = true
       this.curPost = item

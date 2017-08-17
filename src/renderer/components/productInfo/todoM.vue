@@ -24,10 +24,10 @@ export default {
       })
     })
     // 更新完成后刷新
-    this.$bus.on(this.$route.name, content => {
-      this.isEdit = false
-      this.$bus.emit('refreshTodoMItem', true)
-    })
+    // this.$bus.on('hideTodoEdit', content => {
+    //   console.log('ss')
+    //   this.isEdit = false
+    // })
     // 子组建传递curPost过来
     this.$bus.on('curPost', content => {
       this.curPost = content
@@ -35,13 +35,18 @@ export default {
       this.direction = content.direction
     })
     // 改变模式
-    this.$bus.on('changeMode', content => {
-      if (!content) {
-        this.$router.push({name: 'ProductTodoL'})
-      }
-    })
+    this.busEventChangeMode()
   },
   methods: {
+    busEventChangeMode () {
+      this.$bus.off('changeMode')
+      this.$bus.once('changeMode', content => {
+        console.log(content)
+        if (!content) {
+          this.$router.push({name: 'ProductTodoL'})
+        }
+      })
+    },
     changeType (type) {
       this.type = type
       this.$bus.emit('changeType', type)

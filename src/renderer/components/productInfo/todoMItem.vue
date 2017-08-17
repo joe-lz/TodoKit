@@ -23,14 +23,20 @@ export default {
   created () {
     this.changeType(0)
     // 改变后，刷新页面
-    this.$bus.on('refreshTodoMItem', content => {
-      this.changeType(this.type)
-    })
+    this.busEventRouteName()
     this.$bus.on('changeType', content => {
       this.changeType(content)
     })
   },
   methods: {
+    busEventRouteName () {
+      this.$bus.off(this.$route.name)
+      // this.$bus.emit('hideTodoEdit', 'true')
+      this.$bus.once(this.$route.name, content => {
+        console.log(content)
+        this.changeType(this.type)
+      })
+    },
     reset () {
       this.allData = []
       this.curPost = {}
@@ -64,6 +70,7 @@ export default {
       })
     },
     handleEdit (item) {
+      this.busEventRouteName()
       this.selected = item._id
       item.direction = this.direction
       this.$bus.emit('curPost', item)

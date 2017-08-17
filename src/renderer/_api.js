@@ -57,7 +57,7 @@ let qiniuUrl = 'http://ourjximax.bkt.clouddn.com/'
 // let qiniuUrl = 'http://oupexjsrd.bkt.clouddn.com/'
 
 export default {
-  pageSize: 100,
+  pageSize: 2,
   apiRoot,
   root,
   brand: 'pm',

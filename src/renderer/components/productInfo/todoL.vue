@@ -27,23 +27,28 @@ export default {
       })
     })
     // 改变后，刷新页面
-    this.$bus.once(this.$route.name, content => {
-      this.isEdit = false
-      console.log(content)
-      this.changeType(this.type)
-    })
+    this.busEventRouteName()
     // 改变模式
-    this.$bus.on('changeMode', content => {
-      console.log(content)
-      if (content) {
-        this.$router.push({name: 'ProductTodoM'})
-      }
-    })
+    this.busEventChangeMode()
   },
-  // destory () {
-  //   this.$bus.off(this.$route.name)
-  // },
   methods: {
+    busEventRouteName () {
+      this.$bus.off(this.$route.name)
+      this.$bus.once(this.$route.name, content => {
+        this.isEdit = false
+        console.log(content)
+        this.changeType(this.type)
+      })
+    },
+    busEventChangeMode () {
+      this.$bus.off('changeMode')
+      this.$bus.once('changeMode', content => {
+        console.log(content)
+        if (content) {
+          this.$router.push({name: 'ProductTodoM'})
+        }
+      })
+    },
     reset () {
       this.allData = []
       this.curPost = {}
@@ -76,6 +81,7 @@ export default {
       })
     },
     handleEdit (item) {
+      this.busEventRouteName()
       this.selected = item._id
       this.isEdit = true
       this.curPost = item
