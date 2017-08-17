@@ -46,10 +46,9 @@ export default {
   },
   methods: {
     busEmit () {
-      this.$bus.emit(this.page, 'content')
+      this.$bus.emit(this.page, this.page)
     },
     hideImg () {
-      // this.isShowImg = !this.isShowImg
       this.isShowImg = true
     },
     doNothing () {
@@ -215,6 +214,9 @@ export default {
   },
   watch: {
     'curPost' (oldVal, newVal) {
+      if (!oldVal._id && !newVal._id) {
+        return
+      }
       this.initFunc()
     }
   }

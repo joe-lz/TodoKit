@@ -6,7 +6,7 @@ header
       | 你还没有填写花名或姓名，
       router-link(:to='{name: "UserSetting"}') 完善信息
     
-    p(v-else) {{$route.fullPath}}
+    //- p(v-else) {{$route.fullPath}}
   .change-product
     router-link(:to='{name:"Index"}' exect) 
       i.iconfont.icon-qiehuan

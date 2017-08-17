@@ -15,15 +15,19 @@ export default {
       allData: [],
       curPost: {},
       selected: '',
+      type: 0,
       nextPageNo: 1,
       pageSize: this.$api.pageSize
     }
   },
   created () {
-    this.getAllData()
+    this.changeType(0)
     // 改变后，刷新页面
     this.$bus.on('refreshTodoMItem', content => {
-      this.refresh()
+      this.changeType(this.type)
+    })
+    this.$bus.on('changeType', content => {
+      this.changeType(content)
     })
   },
   methods: {
@@ -31,6 +35,7 @@ export default {
       this.allData = []
       this.curPost = {}
       this.selected = ''
+      this.type = 0
       this.nextPageNo = 1
       this.pageSize = this.$api.pageSize
     },
@@ -45,6 +50,7 @@ export default {
           productId: this.$route.params.id,
           isImportant: this.isImportant,
           isUrgent: this.isUrgent,
+          type: this.type,
           nextPageNo: this.nextPageNo,
           pageSize: this.pageSize
         }
@@ -64,6 +70,11 @@ export default {
     },
     refresh () {
       this.reset()
+      this.getAllData()
+    },
+    changeType (type) {
+      this.reset()
+      this.type = type
       this.getAllData()
     }
   }

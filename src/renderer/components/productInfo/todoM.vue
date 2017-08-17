@@ -12,7 +12,8 @@ export default {
     return {
       curPost: {},
       isEdit: false,
-      direction: 'left'
+      direction: 'left',
+      type: 0
     }
   },
   created () {
@@ -41,33 +42,13 @@ export default {
     })
   },
   methods: {
+    changeType (type) {
+      this.type = type
+      this.$bus.emit('changeType', type)
+    }
   }
 }
 </script>
 
-<style lang="sass" scoped>
-@import "../_mixin/mixin.sass"
-.section-wrapper
-  height: 100%
-  .section-content
-    height: 100%
-    .matrix-wrapper
-      display: flex
-      height: 50%
-      border-top: $border
-      border-top-color: $red
-      &:first-child
-        border: none
-
-.todoEdit-wrapper
-  right: -600px
-  transition: $transition
-  &.isEdit
-    right: 0
-.todoEdit-wrapper.right
-  left: -600px
-  right: initial
-  &.isEdit
-    left: 0
-    right: initial
+<style lang="sass" scoped src='./todoM.sass'>
 </style>

@@ -14,12 +14,13 @@ export default {
       curPost: {},
       isEdit: false,
       selected: '',
+      type: 0,
       nextPageNo: 1,
       pageSize: this.$api.pageSize
     }
   },
   created () {
-    this.getAllData()
+    this.changeType(0)
     this.$nextTick(() => {
       window.addEventListener('click', () => {
         this.isEdit = false
@@ -28,10 +29,12 @@ export default {
     // 改变后，刷新页面
     this.$bus.on(this.$route.name, content => {
       this.isEdit = false
-      this.refresh()
+      console.log(content)
+      this.changeType(this.type)
     })
     // 改变模式
     this.$bus.on('changeMode', content => {
+      console.log(content)
       if (content) {
         this.$router.push({name: 'ProductTodoM'})
       }
@@ -43,6 +46,7 @@ export default {
       this.curPost = {}
       this.isEdit = false
       this.selected = ''
+      this.type = 0
       this.nextPageNo = 1
       this.pageSize = this.$api.pageSize
     },
@@ -56,7 +60,8 @@ export default {
         data: {
           productId: this.$route.params.id,
           nextPageNo: this.nextPageNo,
-          pageSize: this.pageSize
+          pageSize: this.pageSize,
+          type: this.type
         }
       }
       this.$http.post(url, body).then((res) => {
@@ -72,8 +77,9 @@ export default {
       this.isEdit = true
       this.curPost = item
     },
-    refresh () {
+    changeType (type) {
       this.reset()
+      this.type = type
       this.getAllData()
     }
   }

@@ -32,7 +32,7 @@ a
   color: $a-color
   font-weight: $fw-lg
 
-input, textarea
+input, textarea, button
   outline: none
   -webkit-appearance: none
   border-radius: 0
@@ -81,8 +81,30 @@ input, textarea
       font-size: $fs-nm
       font-weight: $fw-nm
   .section-content
-    min-height: 300px
-
+  .navigation-wrapper
+    position: fixed
+    top: 10px
+    left: 50%
+    transform: translate(-50%)
+    z-index: 20
+    .button-group
+      button
+        margin-left: -1px
+        width: 80px
+        height: 30px
+        line-height: 30px
+        border: $border
+        background: white
+        cursor: pointer
+        &:hover
+          background: #F1F4FB
+        &:first-child
+          border-radius: 15px 0 0 15px !important
+        &:last-child
+          border-radius: 0 15px 15px 0 !important
+      .active
+        background: $a-color !important
+        color: white !important
 .loadMore
   display: block
   text-align: center

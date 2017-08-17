@@ -15,11 +15,14 @@ export default {
       allData: [],
       curPost: {},
       isEdit: false,
-      selected: ''
+      selected: '',
+      type: 0,
+      nextPageNo: 1,
+      pageSize: this.$api.pageSize
     }
   },
   created () {
-    this.getAllData(this.$route.query.level)
+    this.changeType(0)
     this.$nextTick(() => {
       window.addEventListener('click', () => {
         this.isEdit = false
@@ -28,40 +31,52 @@ export default {
     // 改变后，刷新页面
     this.$bus.on(this.$route.name, content => {
       this.isEdit = false
-      this.refresh()
+      this.changeType(this.type)
     })
   },
   methods: {
+    reset () {
+      this.allData = []
+      this.curPost = {}
+      this.isEdit = false
+      this.selected = ''
+      this.type = 0
+      this.nextPageNo = 1
+      this.pageSize = this.$api.pageSize
+    },
     handleEdit (item) {
       this.selected = item._id
       this.isEdit = true
       this.curPost = item
     },
-    getAllData (level) {
+    getAllData () {
       let url = this.$api.postAllByLevel
       let body = {
         data: {
           productId: this.$route.params.id,
-          level
+          level: this.$route.query.level,
+          nextPageNo: this.nextPageNo,
+          pageSize: this.pageSize,
+          type: this.type
         }
       }
       this.$http.post(url, body).then((res) => {
         if (res.data.code === 0) {
-          this.allData = res.data.data.allData
+          let { allData, nextPageNo } = res.data.data
+          this.allData = this.allData.concat(allData)
+          this.nextPageNo = nextPageNo
         }
       })
     },
-    refresh () {
-      this.getAllData(this.$route.query.level)
+    changeType (type) {
+      this.reset()
+      this.type = type
+      this.getAllData()
     }
   },
   watch: {
     '$route' () {
-      this.allData = []
-      this.curPost = {}
-      this.isEdit = false
-      this.selected = ''
-      this.getAllData(this.$route.query.level)
+      this.changeType(0)
     }
   }
 }
