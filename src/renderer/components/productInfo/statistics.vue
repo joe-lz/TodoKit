@@ -3,8 +3,12 @@
 </template>
 
 <script>
+import NoData from '@/components/_include/nodata'
 export default {
-  name: 'ProductStatistics'
+  name: 'ProductStatistics',
+  components: {
+    NoData
+  }
 }
 </script>
 

@@ -55,6 +55,7 @@
           span.action(v-if='item.action == 5') 归档该任务
           span.to(v-if='item.action != 5') {{item.to.name || $api.placeholder.noname}}
           .content(v-if='item.action != 5') {{item.content}}
+        p.anotation 最多显示50条日志
     .comment-info
       .comment-input
         Input(size='large' v-model='formData.content')

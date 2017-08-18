@@ -44,20 +44,20 @@ let GetLocal = function (name) {
   return JSON.parse(window.localStorage.getItem(name))
 }
 
-let root = 'http://127.0.0.1:4100/v1'
-let apiRoot = 'http://127.0.0.1:4100'
-let qiniuUrl = 'http://ourjximax.bkt.clouddn.com/'
+// let root = 'http://127.0.0.1:4100/v1'
+// let apiRoot = 'http://127.0.0.1:4100'
+// let qiniuUrl = 'http://ourjximax.bkt.clouddn.com/'
 
 // let root = 'https://pmapi-t.qaf.io/v1'
 // let apiRoot = 'https://pmapi-t.qaf.io'
 // let qiniuUrl = 'http://ourjximax.bkt.clouddn.com/'
 
-// let root = 'https://pmapi.qaf.io/v1'
-// let apiRoot = 'https://pmapi.qaf.io'
-// let qiniuUrl = 'http://oupexjsrd.bkt.clouddn.com/'
+let root = 'https://pmapi.qaf.io/v1'
+let apiRoot = 'https://pmapi.qaf.io'
+let qiniuUrl = 'http://oupexjsrd.bkt.clouddn.com/'
 
 export default {
-  pageSize: 2,
+  pageSize: 100,
   apiRoot,
   root,
   brand: 'pm',

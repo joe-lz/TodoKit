@@ -1,12 +1,22 @@
 @import "../_mixin/mixin.sass"
 
 .block-wrapper
+  position: relative
   width: 50%
   &:first-child
     border-right: 1px solid $yellow
   .matrix-title
-    display: none
+    // display: none
+    position: absolute
+    left: 50%
+    margin-left: -25px
+    width: 100px
+    text-align: center
+    line-height: 30px
+    background: $bg-color
+    color: $gray
   .lists
+    padding-top: 30px
     height: 100%
     overflow: hidden
     overflow-y: scroll
