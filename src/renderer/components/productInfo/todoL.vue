@@ -43,7 +43,6 @@ export default {
     busEventChangeMode () {
       this.$bus.off('changeMode')
       this.$bus.once('changeMode', content => {
-        console.log(content)
         if (content) {
           this.$router.push({name: 'ProductTodoM'})
         }

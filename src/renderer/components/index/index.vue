@@ -3,16 +3,18 @@
 </template>
 
 <script>
+import Loading from '../loading'
 import ProductItem from './productItem'
 import PmHeader from '@/components/header'
 import ImgUpload from '../_upload/imgupload'
 export default {
   name: 'Index',
   components: {
-    PmHeader, ProductItem, ImgUpload
+    Loading, PmHeader, ProductItem, ImgUpload
   },
   data () {
     return {
+      isLoading: false,
       allData: [],
       isModal: false,
       formData: {
@@ -30,13 +32,15 @@ export default {
     this.getAllData()
   },
   methods: {
-    getAllData () {
+    async getAllData () {
+      this.isLoading = true
       let url = this.$api.productMy
       let body = {
       }
-      this.$http.post(url, body).then((res) => {
+      await this.$http.post(url, body).then((res) => {
         this.allData = res.data.data.allData
       })
+      this.isLoading = false
     },
     handleCreate () {
       this.$refs.formData.validate((valid) => {

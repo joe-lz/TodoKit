@@ -39,6 +39,7 @@ export default {
         if (res.data.code === 0) {
           this.$api.UpdateUserInfo(res.data.data.curUser)
           this.$Message.success('保存成功')
+          this.$router.go(-1)
         } else {
           this.$Message.error('保存失败')
         }

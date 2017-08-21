@@ -21,8 +21,8 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "pm_vue",
-    "appId": "org.simulatedgreg.electron-vue",
+    "productName": "ProductManager",
+    "appId": "io.qaf.productmanager",
     "directories": {
       "output": "build"
     },
@@ -56,6 +56,7 @@
   },
   "dependencies": {
     "axios": "^0.16.1",
+    "electron-updater": "^2.8.7",
     "iview": "^2.0.0",
     "jade": "^1.11.0",
     "lrz": "^4.9.40",

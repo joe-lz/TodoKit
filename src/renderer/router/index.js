@@ -3,6 +3,7 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 const Index = resolve => require(['@/components/index'], resolve)
+const About = resolve => require(['@/components/about'], resolve)
 const SignIn = resolve => require(['@/components/sign'], resolve)
 const SignUp = resolve => require(['@/components/sign/signup'], resolve)
 const SignUpSMS = resolve => require(['@/components/sign/signup-sms'], resolve)
@@ -22,6 +23,7 @@ export default new Router({
   routes: [
     { path: '/', name: 'Index', component: Index, meta: { requireAuth: true } },
     { path: '/signin', name: 'SignIn', component: SignIn },
+    { path: '/about', name: 'About', component: About },
     { path: '/signup', name: 'SignUp', component: SignUp },
     { path: '/signup-sms', name: 'SignUpSMS', component: SignUpSMS },
     { path: '/user/setting', name: 'UserSetting', component: UserSetting, meta: { requireAuth: true } },

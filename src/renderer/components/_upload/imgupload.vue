@@ -20,10 +20,16 @@ export default {
     this.$nextTick(() => {
       this.getToken()
     })
+    console.log(this.curValue)
   },
   computed: {
-    curValue () {
-      return this.img
+    curValue: {
+      get () {
+        return this.img
+      },
+      set (val) {
+        this.img = val
+      }
     }
   },
   methods: {

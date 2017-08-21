@@ -1,6 +1,7 @@
 'use strict'
 
 import { app, BrowserWindow, Menu } from 'electron'
+import { autoUpdater } from 'electron-updater'
 /**
  * Set `__static` path to static files in production
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-static-assets.html
@@ -18,11 +19,13 @@ function createWindow () {
   /**
    * Initial window options
    */
-  const electron = require('electron')
-  const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
+  // const electron = require('electron')
+  // const {width, height} = electron.screen.getPrimaryDisplay().workAreaSize
   mainWindow = new BrowserWindow({
-    width: width - 100,
-    height: height - 100,
+    // width: width - 100,
+    // height: height - 100,
+    width: 1010,
+    height: 700,
     useContentSize: true,
     titleBarStyle: 'hidden-inset'
   })
@@ -84,9 +87,6 @@ app.on('activate', () => {
  * https://simulatedgreg.gitbooks.io/electron-vue/content/en/using-electron-builder.html#auto-updating
  */
 
-/*
-import { autoUpdater } from 'electron-updater'
-
 autoUpdater.on('update-downloaded', () => {
   autoUpdater.quitAndInstall()
 })
@@ -94,4 +94,3 @@ autoUpdater.on('update-downloaded', () => {
 app.on('ready', () => {
   if (process.env.NODE_ENV === 'production') autoUpdater.checkForUpdates()
 })
- */

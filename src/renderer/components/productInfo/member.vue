@@ -9,6 +9,14 @@ export default {
   components: {
     NoData
   },
+  computed: {
+    limitMemeberNo () {
+      return this.allData[0] ? this.allData[0].productId.memberNo : 10
+    },
+    restMemberNo () {
+      return this.allData[0] ? this.allData[0].productId.memberNo - this.allData.length : 10
+    }
+  },
   data () {
     const validateMobile = (rule, value, callback) => {
       if (value === '') {

@@ -12,6 +12,12 @@ div
           p {{item.userId.name || $api.placeholder.noname}}
           p.position {{item.userId.position}}
       NoData(v-else)
+      p.fix-anotation 
+        | 当前产品最多可添加
+        span {{limitMemeberNo}}
+        | 名成员，还可添加
+        span {{restMemberNo}}
+        | 名
   Modal.productCreate(title="添加成员", v-model="isModal", :mask-closable="false", :closable="false", width='400')
     Form.form-wrapper(:label-width="60", :rules="ruleValidate", ref="formData", :model="formData")
       Form-item.input-wrapper(label='号码' prop="mobile")

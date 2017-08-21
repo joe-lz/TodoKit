@@ -16,6 +16,10 @@ export default {
     if (this.$api.GetAuth()) {
       this.curUserId = this.$api.GetAuth().userInfo._id
     }
+    // window.onbeforeunload = function (e) {
+    //   alert('dd')
+    //   return false
+    // }
   },
   sockets: {
     connect () {  // 这里是监听connect事件
