@@ -1,6 +1,0 @@
-.item-wrapper
-  router-link.coverbg(:to='{name: "ProductInfo", params: {id: item.productId._id}}', :style='`background-image:url(${$api.link.qiniuUrl}${item.productId.logo}${$api.link.qiniuImg})`')
-    span.count(v-if='stateInfo.notification_count > 0') {{stateInfo.notification_count}}
-  p.product-name
-    span(v-text='item.productId.name')
-    span(v-if='item.productId.createrId == item.userId') (我的)
