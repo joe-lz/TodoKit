@@ -24,9 +24,9 @@ npm run lint
 
 This project was generated with [electron-vue](https://github.com/SimulatedGREG/electron-vue)@[b31b441](https://github.com/SimulatedGREG/electron-vue/tree/b31b44123ad42acac12337c4955df4ead853f0df) using [vue-cli](https://github.com/vuejs/vue-cli). Documentation about the original structure can be found [here](https://simulatedgreg.gitbooks.io/electron-vue/content/index.html). -->
 # Install
-###### 支持Mac和Windows
+###### 1、支持Mac和Windows
 ###### 下载 https://github.com/jeodiong/ProductManager/releases
-###### 百度网盘下载
+###### 2、百度网盘下载
 ###### mac: https://pan.baidu.com/s/1bpq5HJh
 ###### win: https://pan.baidu.com/s/1hsaM21m
 # Start
