@@ -12,9 +12,6 @@
 # Install
 ###### 1、支持Mac和Windows
 ###### 下载 https://github.com/jeodiong/ProductManager/releases
-###### 2、百度网盘下载
-###### mac: https://pan.baidu.com/s/1bpq5HJh
-###### win: https://pan.baidu.com/s/1hsaM21m
 # Start
 ### 创建产品
 ![image](https://user-images.githubusercontent.com/8166360/29516118-ba3207f0-86a1-11e7-9032-7b25eb352162.png)
