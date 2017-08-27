@@ -1,0 +1,15 @@
+.one-wrapper
+  Form.form-wrapper(:label-width="60", :rules="ruleValidate", ref="formData", :model="formData")
+    img.logo(:src="$api.link.logo", alt="")
+    Form-item.input-wrapper(label='邮箱' prop="mail")
+      Input(size='large' v-model='formData.mail')
+    Form-item.input-wrapper(label='密码' prop='passwd')
+      Input(size='large' type="password" v-model='formData.passwd')
+    Form-item.input-wrapper
+      Button(type="primary" long size='large' @click='handleSign') 登录
+    p.anotation
+      | 没有账户？
+      router-link(:to='{name: "SignUp"}') 立即注册
+    p.anotation
+      | 没有账户？
+      router-link(:to='{name: "SignUpSMS"}') 手机注册

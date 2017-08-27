@@ -1,0 +1,23 @@
+.one-wrapper
+  PmHeader
+  .two-wrapper.section-wrapper
+    .section-title 账户设置
+    .section-content
+      Form.form-wrapper(:label-width="60", ref="formData", :model="formData")
+        Form-item.input-wrapper(label='手机')
+          Input(size='large' v-model='formData.mobile' disabled)
+        //- Form-item.input-wrapper(label='邮箱')
+        //-   Input(size='large' v-model='formData.email' disabled)
+        Form-item.input-wrapper(label='姓名')
+          Input(size='large' v-model='formData.name')
+        Form-item.input-wrapper(label='职位')
+          Input(size='large' v-model='formData.position')
+        Form-item.input-wrapper(label='头像')
+          //- Input(size='large' v-model='formData.avatar')
+          ImgUpload(:folderName='`avatar/${formData._id}/`', 
+          :img='formData.avatar', 
+          :picroot='$api.link.qiniuUrl',
+          imageName='useravatar'
+          @fileUploaded='fileUploaded')
+        Form-item.input-wrapper
+          Button.btn-submit(type="primary" size='large' @click='handleSubmit', :loading="modal_create_loading") 保存

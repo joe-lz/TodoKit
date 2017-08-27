@@ -1,0 +1,29 @@
+div
+  .section-wrapper
+    .section-title
+      | 成员管理
+      a.a-right(@click='isModal = true') 添加成员
+    .section-content
+      .allData-wrapper(v-if='allData && allData.length > 0')
+        .item-wrapper(v-for='item of allData', :key='item._id')
+          .coverbg(:style='`background-image:url(${$api.link.qiniuUrl}${item.userId.avatar}${$api.link.qiniuImg})`')
+            .del(@click='deleteUser(item.userId)')
+              i.iconfont.icon-el-icon-delete
+          p {{item.userId.name || $api.placeholder.noname}}
+          p.position {{item.userId.position}}
+      NoData(v-else)
+      p.fix-anotation 
+        | 当前产品最多可添加
+        span {{limitMemeberNo}}
+        | 名成员，还可添加
+        span {{restMemberNo}}
+        | 名
+  Modal.productCreate(title="添加成员", v-model="isModal", :mask-closable="false", :closable="false", width='400')
+    Form.form-wrapper(:label-width="60", :rules="ruleValidate", ref="formData", :model="formData")
+      Form-item.input-wrapper(label='号码' prop="mobile")
+        Input(size='large' v-model='formData.mobile')
+    div(slot='footer')
+      Button(size='large' @click='isModal = false') 取消
+      Button(type="primary" size='large' @click='handleAdd', :loading="modal_create_loading") 添加
+      
+      
