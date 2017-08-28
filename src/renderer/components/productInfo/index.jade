@@ -24,9 +24,12 @@
       .border-dive
       div.con
         p.con-title 全部
-        router-link(:to='{name: "ProductStatistics"}' exact)
-          i.iconfont.icon-tongji
-          span 概览
+        //- router-link(:to='{name: "ProductStatistics"}' exact)
+        //-   i.iconfont.icon-tongji
+        //-   span 概览
+        router-link(:to='{name: "ProductAllFilter"}' exact)
+          i.iconfont.icon-filter
+          span 全部任务
         router-link(:to='{name: "ProductAllPost", query:{level: 1}}' exact)
           i.iconfont.icon-daiban
           span 待办

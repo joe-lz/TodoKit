@@ -12,18 +12,10 @@
 # Install
 ###### 1、支持Mac和Windows
 ###### 下载 https://github.com/jeodiong/ProductManager/releases
-# Start
-### 创建产品
-![image](https://user-images.githubusercontent.com/8166360/29516118-ba3207f0-86a1-11e7-9032-7b25eb352162.png)
-### 账户设置
-![image](https://user-images.githubusercontent.com/8166360/29516169-f0a1ecba-86a1-11e7-97f5-7aef78e3790e.png)
-### 创建任务
-![image](https://user-images.githubusercontent.com/8166360/29516459-fbf4b236-86a2-11e7-9dbf-2737058f8e22.png)
-### 任务列表
-![image](https://user-images.githubusercontent.com/8166360/29516309-83c178e4-86a2-11e7-802b-f99127c709e9.png)
-### Matrix Mode
-![image](https://user-images.githubusercontent.com/8166360/29517234-bb788580-86a6-11e7-9986-9036b1f3fac4.png)
-### 任务流转
-![image](https://user-images.githubusercontent.com/8166360/29516950-5499828e-86a5-11e7-9917-51d0f5b02efc.png)
-### 添加成员
-![image](https://user-images.githubusercontent.com/8166360/29516350-a12c9850-86a2-11e7-91b1-d5d462cb462d.png)
+# Screenshot
+![image](https://ws3.sinaimg.cn/large/006tKfTcgy1fizo1lqq05j31kw0zke7f.jpg)
+![image](https://ws2.sinaimg.cn/large/006tKfTcgy1fizo3ylm00j31kw0zk1kx.jpg)
+![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fizo4a236sj31kw0zk1km.jpg)
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fizo4p6jpnj31kw0zk1kx.jpg)
+![image](https://ws4.sinaimg.cn/large/006tKfTcgy1fizo51xisrj31kw0zkhdf.jpg)
+![image](https://ws1.sinaimg.cn/large/006tKfTcgy1fizo5g286pj31kw0zk1kx.jpg)

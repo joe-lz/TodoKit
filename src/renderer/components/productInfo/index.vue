@@ -4,12 +4,11 @@
 
 <script>
 import PmHeader from '@/components/header'
-import SideBar from '@/components/productinfo/sidebar'
 
 export default {
   name: 'ProductInfo',
   components: {
-    PmHeader, SideBar
+    PmHeader
   },
   data () {
     return {

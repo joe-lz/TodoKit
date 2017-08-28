@@ -2,17 +2,30 @@
 
 .section-wrapper
   margin: 0 auto
-  max-width: 800px
+  // max-width: 800px
   .form-wrapper
     padding: 30px
+    padding-top: 0
+    .top-wrapper
+      margin-top: 30px
+      // background: $bg-color
+      .inline-block
+        vertical-align: top
+        display: inline-block
+        width: 50%
+    .bottom-wrapper
+      padding: 30px
+      padding-left: 0
+      border: 1px dashed $gray-sub-sub
     .form-group-inline
       display: flex
       .input-wrapper
         min-width: 120px
         &:last-child
     a.setProduct
+      vertical-align: top
       margin-left: 10px
-      color: $gray-sub-sub
+      color: $gray-sub
       line-height: 36px
       text-decoration: underline
       font-weight: $fw-nm
@@ -31,7 +44,7 @@
       float: right
     .type-wrapper
       padding: 0 15px
-      background: $bg-color
+      // background: $bg-color
       .title
         margin-right: 15px
         display: inline-block

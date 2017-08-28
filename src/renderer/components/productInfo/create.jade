@@ -5,55 +5,64 @@
   //-   p.section-title 创建任务
   .section-content
     Form.form-wrapper(:label-width="60", :rules="ruleValidate", ref="formData", :model="formData")
-      .form-group-inline
-        Form-item.input-wrapper(label='Version' prop='version')
-          Select(v-if='stateInfo.curProduct && stateInfo.curProduct.versions.length > 0' size='large' v-model='formData.version')
-            Option(v-for='item of stateInfo.curProduct.versions', :value='item', :key='item')
-        router-link.setProduct(:to='{name: "ProductSetting", query: {comName: "Versions"}}')
-          span 管理版本
-      Form-item.input-wrapper(label='类型')
-        Radio-group(v-model='formData.type')
-          Radio(label='2') 需求
-          Radio(label='1') Bug
-      Form-item.input-wrapper(label='Tags')
-        Radio-group(v-model='formData.tag' type='button' v-if='stateInfo.curProduct')
-          Radio(v-for='item of stateInfo.curProduct.tags', :label='item', :key='item')
-        router-link.setProduct(:to='{name: "ProductSetting", query: {comName: "Tags"}}')
-          span 管理标签
-      Form-item.input-wrapper(label='优先级')
-        //- Checkbox(v-model='formData.isImportant') 非常重要
-        //- Checkbox(v-model='formData.isUrgent') 非常紧急
-        .type-wrapper
-          .title 重要性
-          Radio-group.radio-group(v-model='formData.isImportant')
-            Radio(label='true') 高
-            Radio(label='false') 低
-        .type-wrapper
-          .title 紧急性
-          Radio-group.radio-group(v-model='formData.isUrgent')
-            Radio(label='true') 高
-            Radio(label='false') 低
+      .bottom-wrapper
+        Form-item.input-wrapper(label='指派' prop='to')
+          //- Select.user-select(size='large' v-model='formData.from')
+          //- v-if='allUser && allUser.length > 0'
+          Select.user-select(v-if='allUser && allUser.length > 20' size='large' v-model='formData.to' placement='top')
+            Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}} -- {{item.userId.position}}
+          Radio-group(v-else v-model='formData.to')
+            Radio(v-for='item of allUser', :label='item.userId._id', :key='item.userId._id') {{item.userId.name || $api.placeholder.noname}}
+        Form-item.input-wrapper(label='标题' prop='title')
+          Input(size='large' v-model='formData.title')
+        Form-item.input-wrapper(v-if='!isContent')
+          Button(@click='isContent = true') 添加描述
+        Form-item.input-wrapper(label='描述' v-show='isContent')
+          #editor
 
-      Form-item.input-wrapper(label='指派' prop='to')
-        //- Select.user-select(size='large' v-model='formData.from')
-        //- v-if='allUser && allUser.length > 0'
-        Select.user-select(v-if='allUser && allUser.length > 20' size='large' v-model='formData.to' placement='top')
-          Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}} -- {{item.userId.position}}
-        Radio-group(v-else v-model='formData.to')
-          Radio(v-for='item of allUser', :label='item.userId._id', :key='item.userId._id') {{item.userId.name || $api.placeholder.noname}}
-      Form-item.input-wrapper(label='标题' prop='title')
-        Input(size='large' v-model='formData.title')
-      Form-item.input-wrapper(v-if='!isContent')
-        Button(@click='isContent = true') 添加描述
-      Form-item.input-wrapper(label='描述' v-show='isContent')
-        #editor
+        Form-item.input-wrapper(label='图片' v-if='isAddImg')
+          ImgUpload(:folderName='`noteImg/${$route.params.id}/`', 
+          :img='formData.noteImg', 
+          :picroot='$api.link.qiniuUrl',
+          imageName='createpost'
+          @fileUploaded='fileUploaded')
+        Button.addImg(@click='isAddImg=true' v-if='!isAddImg') 添加图片
 
-      Form-item.input-wrapper(label='图片' v-if='isAddImg')
-        ImgUpload(:folderName='`noteImg/${$route.params.id}/`', 
-        :img='formData.noteImg', 
-        :picroot='$api.link.qiniuUrl',
-        imageName='createpost'
-        @fileUploaded='fileUploaded')
-      Button.addImg(@click='isAddImg=true' v-if='!isAddImg') 添加图片
-      Form-item.input-wrapper
-        Button.btn-submit(type="primary" size='large' @click='handleSubmit', :loading="modal_create_loading") 保存
+      .top-wrapper
+        .inline-block
+          .form-group-inline
+            Form-item.input-wrapper(label='版本' prop='version')
+              Select(v-if='stateInfo.curProduct && stateInfo.curProduct.versions.length > 0' size='large' v-model='formData.version')
+                Option(v-for='item of stateInfo.curProduct.versions', :value='item', :key='item')
+            router-link.setProduct(:to='{name: "ProductSetting", query: {comName: "Versions"}}') 管理版本
+          Form-item.input-wrapper(label='类型')
+            Radio-group(v-model='formData.type')
+              Radio(label='2') 需求
+              Radio(label='1') Bug
+        .inline-block
+          Form-item.input-wrapper(label='重要性')
+            Radio-group.radio-group(v-model='formData.isImportant')
+              Radio(label='true') 高
+              Radio(label='false') 低
+          Form-item.input-wrapper(label='紧急性')
+            Radio-group.radio-group(v-model='formData.isUrgent')
+              Radio(label='true') 高
+              Radio(label='false') 低
+        Form-item.input-wrapper(label='标签')
+          Radio-group(v-model='formData.tag' type='button' v-if='stateInfo.curProduct')
+            Radio(v-for='item of stateInfo.curProduct.tags', :label='item', :key='item')
+          router-link.setProduct(:to='{name: "ProductSetting", query: {comName: "Tags"}}') 管理标签
+        Form-item.input-wrapper
+          Button.btn-submit(type="primary" size='large' @click='handleSubmit', :loading="modal_create_loading") 创建
+
+        //- Form-item.input-wrapper(label='优先级')
+        //-   .type-wrapper
+        //-     .title 重要性
+        //-     Radio-group.radio-group(v-model='formData.isImportant')
+        //-       Radio(label='true') 高
+        //-       Radio(label='false') 低
+        //-   .type-wrapper
+        //-     .title 紧急性
+        //-     Radio-group.radio-group(v-model='formData.isUrgent')
+        //-       Radio(label='true') 高
+        //-       Radio(label='false') 低
