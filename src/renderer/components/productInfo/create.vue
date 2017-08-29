@@ -18,7 +18,7 @@ export default {
         productId: this.$route.params.id,
         title: '',
         content: '',
-        type: 2,
+        type: 1,
         isImportant: 'false',
         isUrgent: 'false',
         createrId: '',
@@ -51,9 +51,8 @@ export default {
       }
       this.editor.create()
       this.editor.txt.html(`
-        <p>1、平台</p>
-        <p>2、版本</p>
-        <p>3、问题</p>
+        <p>1、问题</p>
+        <p>2、预期</p>
         `)
     })
 

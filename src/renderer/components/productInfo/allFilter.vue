@@ -111,9 +111,10 @@ export default {
       this.getAllData()
     },
     handleReset () {
-      this.reset()
-      this.resetForm()
-      this.getAllData()
+      // this.reset()
+      // this.resetForm()
+      // this.getAllData()
+      window.location.reload()
     },
     handleEdit (item) {
       this.busEventRouteName()

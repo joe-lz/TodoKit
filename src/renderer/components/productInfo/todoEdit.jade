@@ -69,11 +69,12 @@
           span.time {{item.createdAt}}
           span.from {{item.from.name || $api.placeholder.noname}}
           span.action(v-if='item.action == 1') 指派给
-          span.action(v-if='item.action == 2') 完成，并指派给
+          span.action(v-if='item.action == 2') 完成，等待
           span.action(v-if='item.action == 3') 拒绝
           span.action(v-if='item.action == 4') 评论
           span.action(v-if='item.action == 5') 归档该任务
           span.to(v-if='item.action != 5') {{item.to.name || $api.placeholder.noname}}
+          span.action(v-if='item.action == 2') 审核归档
           .content(v-if='item.action != 5') {{item.content}}
         p.anotation 最多显示50条日志
     .comment-info
