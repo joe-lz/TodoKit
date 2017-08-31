@@ -68,8 +68,8 @@ export default {
         multi_selection: false,
         auto_start: true, // 选择文件后自动上传，若关闭需要自己绑定事件触发上传,
         resize: {
-          width: 400,
-          quality: 70
+          width: 2000,
+          height: 1500
         },
         init: {
           'FilesAdded' (up, files) {

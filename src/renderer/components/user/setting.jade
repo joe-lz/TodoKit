@@ -12,6 +12,7 @@
           Input(size='large' v-model='formData.name')
         Form-item.input-wrapper(label='职位')
           Input(size='large' v-model='formData.position')
+
         Form-item.input-wrapper(label='头像')
           //- Input(size='large' v-model='formData.avatar')
           ImgUpload(:folderName='`avatar/${formData._id}/`', 

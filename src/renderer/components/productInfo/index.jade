@@ -15,7 +15,6 @@
         router-link(:to='{name: "ProductTodoL"}' exact v-else)
           i.iconfont.icon-daiban
           span 我的任务
-
         router-link(:to='{name: "ProductNotification"}' exact)
           i.iconfont.icon-xiaoxi
           span 消息中心
@@ -30,15 +29,15 @@
         router-link(:to='{name: "ProductAllFilter"}' exact)
           i.iconfont.icon-filter
           span 全部任务
-        router-link(:to='{name: "ProductAllPost", query:{level: 1}}' exact)
-          i.iconfont.icon-daiban
-          span 待办
-        router-link(:to='{name: "ProductAllPost", query:{level: 2}}' exact)
-          i.iconfont.icon-shenhe
-          span 待审核
-        router-link(:to='{name: "ProductAllPost", query:{level: 5}}' exact)
-          i.iconfont.icon-wancheng
-          span 已归档
+        //- router-link(:to='{name: "ProductAllPost", query:{level: 1}}' exact)
+        //-   i.iconfont.icon-daiban
+        //-   span 待办
+        //- router-link(:to='{name: "ProductAllPost", query:{level: 2}}' exact)
+        //-   i.iconfont.icon-shenhe
+        //-   span 待审核
+        //- router-link(:to='{name: "ProductAllPost", query:{level: 5}}' exact)
+        //-   i.iconfont.icon-wancheng
+        //-   span 已归档
       .border-dive
       div.con
         p.con-title 设置

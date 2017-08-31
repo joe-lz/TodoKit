@@ -1,22 +1,70 @@
-//- .section-wrapper
-//-   .section-content
-//-     .item-wrapper
-//-       //- .wrapper-title ALL TASKS
-//-       .con
-//-         .block
-//-           p.des 全部
-//-           p.item-title 456
-//-           p.item-title 456
-//-         .block
-//-           p.des 待办
-//-           p.item-title 99
-//-           p.item-title 99
-//-         .block
-//-           p.des 待审核
-//-           p.item-title 36
-//-           p.item-title 36
-//-         .block
-//-           p.des 归档
-//-           p.item-title 196
-//-           p.item-title 196
-NoData
+.section-wrapper.statistics-wrapper
+  NoData(v-if='!tagArray || !versionArray || tagArray.length == 0 || versionArray == 0')
+  .navigation-wrapper
+    .button-group
+      button(@click='changeType(0)', :class='{"active": type==0}') 全部
+      button(@click='changeType(1)', :class='{"active": type==1}') Bug
+      button(@click='changeType(2)', :class='{"active": type==2}') 需求
+    .version-select-wrapper
+      Select.version-select(v-if='curProduct && curProduct.versions && curProduct.versions.length > 0' v-model='version' placeholder='全部版本' @on-change='changeVersion')
+        Option(value='0') 全部版本
+        Option(v-for='item of curProduct.versions', :value='item', :key='item')
+    .version-select-wrapper.version-select-wrapper-date
+      Select.version-select(v-model='day' placeholder='全部日期' @on-change='changeDay')
+        Option(value='0') 全部日期
+        Option(value='1') 24h
+        Option(value='2') 7天
+        Option(value='3') 30天
+    //- .button-group.date
+    //-   a(@click='changeDay(0)', :class='{"active": day==0}') 全部
+    //-   a(@click='changeDay(1)', :class='{"active": day==1}') 24h
+    //-   a(@click='changeDay(2)', :class='{"active": day==2}') 7天
+    //-   a(@click='changeDay(3)', :class='{"active": day==3}') 30天
+  .section-content
+    .item-wrapper(v-if='tagArray && tagArray.length > 0')
+      .con
+        .block.header
+          p.des Tags
+        .block.header
+          p.des 待办
+        .block.header
+          p.des 待审核
+        .block.header
+          p.des 归档
+        .block.header
+          p.des 全部任务
+      .con(v-for='item of tagArray')
+        .block
+          .item-title {{item._id ? item._id : "无标签"}}
+        .block
+          .item-title {{item.no_1 ? item.no_1 : ''}}
+        .block
+          .item-title {{item.no_2 ? item.no_2 : ''}}
+        .block
+          .item-title {{item.no_5 ? item.no_5 : ''}}
+        .block
+          .item-title {{item.no_all ? item.no_all : ''}}
+    .item-wrapper(v-if='versionArray && versionArray.length > 0')
+      .con
+        .block.header
+          p.des Versions
+        .block.header
+          p.des 待办
+        .block.header
+          p.des 待审核
+        .block.header
+          p.des 归档
+        .block.header
+          p.des 全部任务
+      .con(v-for='item of versionArray')
+        .block
+          .item-title {{item._id ? item._id : "无版本号"}}
+        .block
+          .item-title {{item.no_1 ? item.no_1 : ''}}
+        .block
+          .item-title {{item.no_2 ? item.no_2 : ''}}
+        .block
+          .item-title {{item.no_5 ? item.no_5 : ''}}
+        .block
+          .item-title {{item.no_all ? item.no_all : ''}}
+      

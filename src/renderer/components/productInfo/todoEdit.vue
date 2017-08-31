@@ -14,34 +14,33 @@ export default {
       modal_create_loading: false,
       formData: {
         productId: '',
-        postId: '',
+        postId: this.curPost._id,
         from: '',
-        to: '',
+        to: this.curPost.createrId,
         action: 4,
         content: ''
       },
       isPoint: false,
       pointFormData: {
         productId: '',
-        postId: '',
+        postId: this.curPost._id,
         from: '',
-        to: '',
+        to: this.curPost.createrId,
         action: 1,
         content: ''
       },
       isFinish: false,
       finishFormData: {
         productId: '',
-        postId: '',
+        postId: this.curPost._id,
         from: '',
-        to: '',
+        to: this.curPost.createrId,
         action: 2,
         content: ''
       }
     }
   },
   created () {
-    this.finishFormData.to = this.curPost.createrId
     this.getAllUser()
   },
   methods: {
@@ -56,32 +55,28 @@ export default {
     restFromData () {
       this.formData = {
         productId: '',
-        postId: '',
+        postId: this.curPost._id,
         from: '',
-        to: '',
+        to: this.curPost.createrId,
         action: 4,
         content: ''
       }
-      this.formData.postId = this.curPost._id
       this.pointFormData = {
         productId: '',
-        postId: '',
+        postId: this.curPost._id,
         from: '',
-        to: '',
+        to: this.curPost.createrId,
         action: 1,
         content: ''
       }
-      this.pointFormData.postId = this.curPost._id
       this.finishFormData = {
         productId: '',
-        postId: '',
+        postId: this.curPost._id,
         from: '',
-        to: '',
+        to: this.curPost.createrId,
         action: 2,
         content: ''
       }
-      this.finishFormData.postId = this.curPost._id
-      this.finishFormData.to = this.curPost.createrId
     },
     initFunc () {
       this.getAllLog()
@@ -111,7 +106,7 @@ export default {
         if (res.data.code === 0) {
           let allLog = res.data.data.allData
           this.allLog = this.$_.chain(allLog).map((obj) => {
-            obj.createdAt = this.$moment(obj.createdAt).format('YYYY/MM/DD h:mm')
+            obj.createdAt = this.$moment(obj.createdAt).format('YYYY-MM-DD h:mm')
             return obj
           }).value()
         }

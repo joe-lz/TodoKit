@@ -1,5 +1,20 @@
 @import "../_mixin/mixin.sass"
 .section-wrapper
+  .mark-all-read
+    position: fixed
+    bottom: 0
+    right: 0
+    width: 120px
+    height: 44px
+    line-height: 44px
+    text-align: center
+    color: $gray
+    box-shadow: $box-shadow
+    background: $a-color
+    color: white
+    &:hover
+      background: darken($a-color, 10%)
+  .navigation-wrapper
 .section-content
   .item-wrapper
     position: relative

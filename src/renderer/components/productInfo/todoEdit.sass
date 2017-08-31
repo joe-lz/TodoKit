@@ -4,19 +4,23 @@
   position: fixed
   top: 0
   z-index: 100
-  padding-top: 50px
   padding-bottom: 50px
   background: white
   box-shadow: $box-shadow
-  width: 500px
+  width: 600px
   height: 100vh
   overflow: hidden
   section
     overflow-y: scroll
     height: 100%
     padding: 30px
-    padding-top: 0
+    .guide
+      float: right
+      vertical-align: top
+      display: inline-block
+      height: 40px
     .action-info
+      vertical-align: top
       display: inline-block
       .btn
         margin-right: 15px
@@ -73,8 +77,8 @@
               color: white
             img
               width: initial !important
-              max-width: 90%
-              max-height: 90%
+              max-width: 99%
+              max-height: 99%
     .log-info
       .allData-wrapper
         .anotation
@@ -110,7 +114,7 @@
       padding: 0 10px
       padding-top: 8px
       display: flex
-      width: 500px
+      width: 600px
       height: 50px
       background: white
       box-shadow: $box-shadow

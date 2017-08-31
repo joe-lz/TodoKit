@@ -8,6 +8,7 @@
       Button.btn(@click='handleClose(curPost)') 归档
     .action-info(v-if='curPost.level == 5')
       Button.btn(@click='isPoint = true') 重开任务
+    img.guide(src="../../../../static/guide.png", alt="")
     .border-dive
     .post-info
       .group
@@ -62,6 +63,9 @@
       //-   label 标签：
       //-   .con
       //-     span {{curPost.tag}}
+      .group
+        label 时间：
+        .con(v-text='$moment(curPost.createdAt).format("YYYY-MM-DD h:mm")')
     .border-dive
     .log-info
       .allData-wrapper

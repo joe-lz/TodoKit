@@ -7,10 +7,10 @@
   //-     label 次版本号
   //-     input(v-model='versionSub' type='number')
   //- p 版本{{version}}
-  Form.form-wrapper(:label-width="60")
-    Form-item.input-wrapper(label='主版本号')
+  Form.form-wrapper(:label-width="60", :rules="ruleValidate", ref="formData")
+    Form-item.input-wrapper(label='主版本号' prop="versionMain")
       Input(size='large' v-model='versionMain')
-    Form-item.input-wrapper(label='次版本号')
+    Form-item.input-wrapper(label='子版本号' prop="versionSub")
       Input(size='large' v-model='versionSub')
     Form-item.input-wrapper
       Button(type='primary' @click='handleSubmit', :loading="modal_create_loading") 添加

@@ -60,7 +60,7 @@ export default {
         if (res.data.code === 0) {
           let { allData, nextPageNo } = res.data.data
           allData = this.$_.chain(allData).map((obj) => {
-            obj.createdAt = this.$moment(obj.createdAt).format('YYYY/MM/DD h:mm:ss')
+            obj.createdAt = this.$moment(obj.createdAt).format('H:mm')
             return obj
           }).value()
           this.allData = this.allData.concat(allData)

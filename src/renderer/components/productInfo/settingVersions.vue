@@ -5,12 +5,40 @@
 export default {
   name: 'ProductSettingVersions',
   data () {
+    const validateNumber = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('请输入正整数'))
+      } else {
+        if (!this.$api.isNumber(this.versionMain)) {
+          callback(new Error('请输入正整数'))
+        }
+        callback()
+      }
+    }
+    const validateNumber2 = (rule, value, callback) => {
+      if (value === '') {
+        callback(new Error('请输入正整数'))
+      } else {
+        if (!this.$api.isNumber(this.versionSub)) {
+          callback(new Error('请输入正整数'))
+        }
+        callback()
+      }
+    }
     return {
       modal_create_loading: false,
       curProduct: {
       },
       versionMain: '',
-      versionSub: ''
+      versionSub: '',
+      ruleValidate: {
+        versionMain: [
+          { validator: validateNumber, trigger: 'blur' }
+        ],
+        versionSub: [
+          { validator: validateNumber2, trigger: 'blur' }
+        ]
+      }
     }
   },
   computed: {
@@ -38,27 +66,27 @@ export default {
       })
     },
     handleSubmit () {
-      if (!this.versionMain || !this.versionSub) {
-        this.$Message.error('版本号必填')
-        return
-      }
-      this.modal_create_loading = true
-      let url = this.$api.productSettingAddVersion
-      let body = {
-        data: {
-          _id: this.curProduct._id,
-          version: this.version
-        }
-      }
-      this.$http.post(url, body).then((res) => {
-        this.modal_create_loading = false
-        if (res.data.code === 0) {
-          this.getData()
-          this.$Message.success('保存成功')
-          this.versionMain = ''
-          this.versionSub = ''
-        } else {
-          this.$Message.error('保存失败')
+      this.$refs.formData.validate((valid) => {
+        if (valid) {
+          this.modal_create_loading = true
+          let url = this.$api.productSettingAddVersion
+          let body = {
+            data: {
+              _id: this.curProduct._id,
+              version: this.version
+            }
+          }
+          this.$http.post(url, body).then((res) => {
+            this.modal_create_loading = false
+            if (res.data.code === 0) {
+              this.getData()
+              this.$Message.success('保存成功')
+              this.versionMain = ''
+              this.versionSub = ''
+            } else {
+              this.$Message.error('保存失败')
+            }
+          })
         }
       })
     },
@@ -91,5 +119,5 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped src='./settingVersions.sass'>
+<style lang="sass" scoped src='./settingTags.sass'>
 </style>
