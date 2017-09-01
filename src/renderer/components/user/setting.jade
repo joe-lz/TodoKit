@@ -20,5 +20,9 @@
           :picroot='$api.link.qiniuUrl',
           imageName='useravatar'
           @fileUploaded='fileUploaded')
+        Form-item.input-wrapper(label='角色')
+          Radio-group(v-model='formData.role')
+            Radio(label='开发者') 开发者
+            Radio(label='测试者') 测试者
         Form-item.input-wrapper
           Button.btn-submit(type="primary" size='large' @click='handleSubmit', :loading="modal_create_loading") 保存

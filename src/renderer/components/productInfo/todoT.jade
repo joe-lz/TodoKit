@@ -2,9 +2,9 @@
   .navigation-wrapper
     .button-group
       button(@click='changeType(0)', :class='{"active": type==0}') 全部
-      button(@click='changeType(1)', :class='{"active": type==1}') Bug
-      button(@click='changeType(2)', :class='{"active": type==2}') 需求
-      //- button(@click='changeType("my")', :class='{"active": type=="my"}') 创建
+      button(@click='changeType(1)', :class='{"active": type==1}') 待办
+      button(@click='changeType(2)', :class='{"active": type==2}') 待审核
+      button(@click='changeType(5)', :class='{"active": type==5}') 已归档
   TodoEdit.todoEdit-wrapper(:curPost='curPost', :page='$route.name', :class='{"isEdit": isEdit}')
   .section-content
     .item-wrapper(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')

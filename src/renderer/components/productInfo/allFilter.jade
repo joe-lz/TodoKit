@@ -1,11 +1,5 @@
 .section-wrapper.allFilter-wrapper(v-if='stateInfo && stateInfo.curProduct')
   .filter-wrapper
-    Tooltip(content='类型' placement="top")
-      Select(placeholder='类型' v-model='formData.type' @on-change='handleChange')
-        Option(v-for='item of stateInfo.typeArr', :value='item.id', :key='item.id') {{item.name}}
-    Tooltip(content='版本' placement="top")
-      Select(placeholder='版本' v-model='formData.version' @on-change='handleChange')
-        Option(v-for='item of stateInfo.curProduct.versions', :value='item', :key='item')
     Tooltip(content='标签' placement="top")
       Select(placeholder='标签' v-model='formData.tag' @on-change='handleChange')
         Option(v-for='item of stateInfo.curProduct.tags', :value='item', :key='item')
@@ -29,6 +23,12 @@
     Tooltip(content='完成人' placement="top")
       Select(placeholder='完成人' v-model='formData.finisherId' @on-change='handleChange')
         Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+    Tooltip(content='类型' placement="top")
+      Select(placeholder='类型' v-model='formData.type' @on-change='handleChange')
+        Option(v-for='item of stateInfo.typeArr', :value='item.id', :key='item.id') {{item.name}}
+    Tooltip(content='版本' placement="top")
+      Select(placeholder='版本' v-model='formData.version' @on-change='handleChange')
+        Option(v-for='item of stateInfo.curProduct.versions', :value='item', :key='item')
     Button(type='primary' @click='handleReset') 重置
   .allData-wrapper
     .section-content(v-if='allData && allData.length > 0')
