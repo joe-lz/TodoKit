@@ -5,16 +5,17 @@
     .productName(v-if='stateInfo.curProduct') {{stateInfo.curProduct.name}}
     aside.side-bar.sidebar-wrapper
       div.con
-        p.con-title 我
+        p.con-title 我的
         router-link(:to='{name: "ProductCreate"}' exact)
           i.iconfont.icon-createBom
-          span 创建
-        router-link(:to='{name: "ProductTodoL"}' exact)
-          i.iconfont.icon-wancheng
-          span 我的任务
+          span 创建任务
         router-link(:to='{name: "ProductTodoT"}' exact)
           i.iconfont.icon-lishirenwu
           span 创建历史
+        router-link(:to='{name: "ProductTodoL"}' exact)
+          i.iconfont.icon-wancheng
+          span 我的任务
+
         //- div(v-if='$api.GetAuth() && $api.GetAuth().userInfo.role == "测试者"')
         //-   //- 测试人员
         //-   router-link(:to='{name: "ProductTodoL"}' exact)
@@ -41,7 +42,7 @@
         p.con-title 全部
         router-link(:to='{name: "ProductStatistics"}' exact)
           i.iconfont.icon-tongji
-          span 概览
+          span 统计
         router-link(:to='{name: "ProductAllFilter"}' exact)
           i.iconfont.icon-filter
           span 全部任务

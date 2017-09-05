@@ -1,10 +1,10 @@
 .section-wrapper
   .navigation-wrapper
     .button-group
-      button(@click='changeType(0)', :class='{"active": type==0}') 全部
-      button(@click='changeType(1)', :class='{"active": type==1}') 待办
-      button(@click='changeType(2)', :class='{"active": type==2}') 待审核
-      button(@click='changeType(5)', :class='{"active": type==5}') 已归档
+      button(@click='changeLevel(0)', :class='{"active": level==0}') 全部
+      button(@click='changeLevel(1)', :class='{"active": level==1}') 待办
+      button(@click='changeLevel(2)', :class='{"active": level==2}') 待审核
+      button(@click='changeLevel(5)', :class='{"active": level==5}') 已归档
   TodoEdit.todoEdit-wrapper(:curPost='curPost', :page='$route.name', :class='{"isEdit": isEdit}')
   .section-content
     .item-wrapper(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')

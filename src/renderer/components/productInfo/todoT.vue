@@ -14,13 +14,13 @@ export default {
       curPost: {},
       isEdit: false,
       selected: '',
-      type: 0,
+      level: 0,
       nextPageNo: 1,
       pageSize: this.$api.pageSize
     }
   },
   created () {
-    this.changeType(0)
+    this.changeLevel(0)
     this.$nextTick(() => {
       window.addEventListener('click', () => {
         this.isEdit = false
@@ -37,7 +37,7 @@ export default {
       this.$bus.once(this.$route.name, content => {
         this.isEdit = false
         console.log(content)
-        this.changeType(this.type)
+        this.changeLevel(this.level)
       })
     },
     busEventChangeMode () {
@@ -53,7 +53,7 @@ export default {
       this.curPost = {}
       this.isEdit = false
       this.selected = ''
-      this.type = 0
+      this.level = 0
       this.nextPageNo = 1
       this.pageSize = this.$api.pageSize
     },
@@ -62,13 +62,13 @@ export default {
         this.$Message.error('没有更多数据了!')
         return
       }
-      let url = this.$api.postMy
+      let url = this.$api.postMycreate
       let body = {
         data: {
           productId: this.$route.params.id,
           nextPageNo: this.nextPageNo,
           pageSize: this.pageSize,
-          type: this.type
+          level: this.level
         }
       }
       this.$http.post(url, body).then((res) => {
@@ -85,9 +85,9 @@ export default {
       this.isEdit = true
       this.curPost = item
     },
-    changeType (type) {
+    changeLevel (level) {
       this.reset()
-      this.type = type
+      this.level = level
       this.getAllData()
     }
   }

@@ -21,7 +21,7 @@
     "postinstall": "npm run lint:fix"
   },
   "build": {
-    "productName": "PM Todo",
+    "productName": "TodoKit",
     "appId": "io.qaf.productmanager",
     "directories": {
       "output": "build"
