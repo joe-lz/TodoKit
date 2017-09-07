@@ -29,23 +29,13 @@ export default {
     // 改变后，刷新页面
     this.busEventRouteName()
     // 改变模式
-    this.busEventChangeMode()
   },
   methods: {
     busEventRouteName () {
       this.$bus.off(this.$route.name)
       this.$bus.once(this.$route.name, content => {
         this.isEdit = false
-        console.log(content)
         this.changeType(this.type)
-      })
-    },
-    busEventChangeMode () {
-      this.$bus.off('changeMode')
-      this.$bus.once('changeMode', content => {
-        if (content) {
-          this.$router.push({name: 'ProductTodoM'})
-        }
       })
     },
     reset () {

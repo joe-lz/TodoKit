@@ -15,23 +15,6 @@
         router-link(:to='{name: "ProductTodoL"}' exact)
           i.iconfont.icon-wancheng
           span 我的任务
-
-        //- div(v-if='$api.GetAuth() && $api.GetAuth().userInfo.role == "测试者"')
-        //-   //- 测试人员
-        //-   router-link(:to='{name: "ProductTodoL"}' exact)
-        //-     i.iconfont.icon-list
-        //-     span 我的任务
-        //-   router-link(:to='{name: "ProductTodoT"}' exact)
-        //-     i.iconfont.icon-lishirenwu
-        //-     span 我创建的
-        //- div(v-else)
-        //-   //- 开发者
-        //-   router-link(:to='{name: "ProductTodoM"}' exact v-if='isMatrix')
-        //-     i.iconfont.icon-list
-        //-     span 我的任务
-        //-   router-link(:to='{name: "ProductTodoL"}' exact v-else)
-        //-     i.iconfont.icon-list
-        //-     span 我的任务
         router-link(:to='{name: "ProductNotification"}' exact)
           i.iconfont.icon-xiaoxi
           span 消息中心
@@ -64,11 +47,6 @@
         router-link(:to='{name: "ProductSetting"}' exact)
           i.iconfont.icon-settings
           span 产品设置
-      .isMatrix-wrapper(:class='{"true": isMatrix}' v-if='$api.GetAuth() && $api.GetAuth().userInfo.role == "开发者"')
-        span.title Matrix Mode
-        i-switch.isMatrix(v-model='isMatrix', @on-change='handleIsMatrix')
-          span(slot="open") 开
-          span(slot="close") 关
     .main-wrapper
       router-view.contain-wrapper
     

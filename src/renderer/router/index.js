@@ -11,7 +11,6 @@ const UserSetting = resolve => require(['@/components/user/setting'], resolve)
 const ProductInfo = resolve => require(['@/components/productInfo'], resolve)
 const ProductCreate = resolve => require(['@/components/productInfo/create'], resolve)
 const ProductTodoL = resolve => require(['@/components/productInfo/todoL'], resolve)
-const ProductTodoM = resolve => require(['@/components/productInfo/todoM'], resolve)
 const ProductTodoT = resolve => require(['@/components/productInfo/todoT'], resolve)
 const ProductMember = resolve => require(['@/components/productInfo/member'], resolve)
 const ProductSetting = resolve => require(['@/components/productInfo/setting'], resolve)
@@ -35,7 +34,6 @@ export default new Router({
         { path: '', name: 'ProductInfo', redirect: {name: 'ProductTodoL'} },
         { path: 'create', name: 'ProductCreate', component: ProductCreate, meta: { requireAuth: true } },
         { path: 'todoL', name: 'ProductTodoL', component: ProductTodoL, meta: { requireAuth: true } },
-        { path: 'todoM', name: 'ProductTodoM', component: ProductTodoM, meta: { requireAuth: true } },
         { path: 'todoT', name: 'ProductTodoT', component: ProductTodoT, meta: { requireAuth: true } },
         { path: 'member', name: 'ProductMember', component: ProductMember, meta: { requireAuth: true } },
         { path: 'setting', name: 'ProductSetting', component: ProductSetting, meta: { requireAuth: true } },
