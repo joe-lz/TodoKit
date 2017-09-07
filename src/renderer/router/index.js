@@ -15,7 +15,6 @@ const ProductTodoT = resolve => require(['@/components/productInfo/todoT'], reso
 const ProductMember = resolve => require(['@/components/productInfo/member'], resolve)
 const ProductSetting = resolve => require(['@/components/productInfo/setting'], resolve)
 const ProductNotification = resolve => require(['@/components/productInfo/notification'], resolve)
-const ProductAllPost = resolve => require(['@/components/productInfo/allpost'], resolve)
 const ProductAllFilter = resolve => require(['@/components/productInfo/allFilter'], resolve)
 const ProductStatistics = resolve => require(['@/components/productInfo/statistics'], resolve)
 
@@ -38,7 +37,6 @@ export default new Router({
         { path: 'member', name: 'ProductMember', component: ProductMember, meta: { requireAuth: true } },
         { path: 'setting', name: 'ProductSetting', component: ProductSetting, meta: { requireAuth: true } },
         { path: 'notification', name: 'ProductNotification', component: ProductNotification, meta: { requireAuth: true } },
-        { path: 'allpost', name: 'ProductAllPost', component: ProductAllPost, meta: { requireAuth: true } },
         { path: 'allfilter', name: 'ProductAllFilter', component: ProductAllFilter, meta: { requireAuth: true } },
         { path: 'statistics', name: 'ProductStatistics', component: ProductStatistics, meta: { requireAuth: true } }
       ]
