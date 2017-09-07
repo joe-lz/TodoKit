@@ -1,0 +1,10 @@
+.section-wrapper
+  .navigation-wrapper
+    .button-group
+      button(@click='changeType("Basic")', :class='{"active": comName=="Basic"}') 基本信息
+      button(@click='changeType("Versions")', :class='{"active": comName=="Versions"}') 版本管理
+      button(@click='changeType("Tags")', :class='{"active": comName=="Tags"}') 标签管理
+  .section-content
+    Basic(v-if='comName=="Basic"')
+    Versions(v-if='comName=="Versions"')
+    Tags(v-if='comName=="Tags"')

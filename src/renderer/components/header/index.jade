@@ -1,0 +1,21 @@
+header
+  nav
+    p.noname(v-if='!$api.GetAuth().userInfo.name')
+      | 你还没有填写花名或姓名，
+      router-link(:to='{name: "UserSetting"}') 完善信息
+  .change-product
+    router-link(:to='{name:"Index"}' exect) 
+      i.iconfont.icon-qiehuan
+      | 切换产品
+  Dropdown.profile(placement="bottom-end" trigger='click')
+    a.avatar(href="javascript:void(0)")
+      .coverbg(:style='`background-image:url(${$api.link.qiniuUrl}${userInfo.avatar}${$api.link.qiniuImg})`')
+    Dropdown-menu(slot='list')
+      Dropdown-item
+        router-link.nav-item(:to='{name:"UserSetting"}' exect) 账户设置
+      Dropdown-item
+        a(@click='$api.Openlink("https://github.com/jeodiong/ProductManager/issues")') 意见反馈
+      Dropdown-item
+        a(@click='$api.Openlink("https://github.com/jeodiong/TodoKit/releases")') 版本更新
+      Dropdown-item(@click.native='signout' divided)
+        a 退出

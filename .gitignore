@@ -11,17 +11,3 @@ thumbs.db
 
 
 _api.js
-src/
-.electron-vue/
-build/
-dist/
-static/
-.babelrc
-.eslintignore
-.eslintrc.js
-.travis.yml
-appveyor.yml
-package-lock.json
-package.json
-yarn-error.log
-yarn.lock

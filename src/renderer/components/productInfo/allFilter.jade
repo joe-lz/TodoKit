@@ -1,0 +1,56 @@
+.section-wrapper.allFilter-wrapper(v-if='stateInfo && stateInfo.curProduct')
+  .filter-wrapper
+    Tooltip(content='标签' placement="top")
+      Select(placeholder='标签' v-model='formData.tag' @on-change='handleChange')
+        Option(v-for='item of stateInfo.curProduct.tags', :value='item', :key='item')
+    //- Tooltip(content='重要性' placement="top")
+    //-   Select(placeholder='重要性' @on-change='handleChange')
+    //-     Option(value='true') 重要
+    //-     Option(value='false') 不重要
+    //- Tooltip(content='紧急性' placement="top")
+    //-   Select(placeholder='紧急性' @on-change='handleChange')
+    //-     Option(value='true') 紧急
+    //-     Option(value='false') 不紧急
+    Tooltip(content='状态' placement="top")
+      Select(placeholder='状态' @on-change='handleChange' v-model='formData.level')
+        Option(v-for='item of stateInfo.levelArr', :value='item.id', :key='item.id') {{item.name}}
+    Tooltip(content='创建人' placement="top")
+      Select(placeholder='创建人' v-model='formData.createrId' @on-change='handleChange')
+        Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+    Tooltip(content='执行人' placement="top")
+      Select(placeholder='执行人' v-model='formData.to' @on-change='handleChange')
+        Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+    Tooltip(content='完成人' placement="top")
+      Select(placeholder='完成人' v-model='formData.finisherId' @on-change='handleChange')
+        Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+    Tooltip(content='类型' placement="top")
+      Select(placeholder='类型' v-model='formData.type' @on-change='handleChange')
+        Option(v-for='item of stateInfo.typeArr', :value='item.id', :key='item.id') {{item.name}}
+    Tooltip(content='版本' placement="top")
+      Select(placeholder='版本' v-model='formData.version' @on-change='handleChange')
+        Option(v-for='item of stateInfo.curProduct.versions', :value='item', :key='item')
+    Button(type='primary' @click='handleReset') 重置
+  .allData-wrapper
+    .section-content(v-if='allData && allData.length > 0')
+      .item-wrapper(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')
+        .state
+          span.isImportant(v-if='item.isImportant') 重要
+          span.not(v-else) -
+          span.isUrgent(v-if='item.isUrgent') 紧急
+          span.not(v-else) -
+        span.title(v-text='item.title')
+        span.tag(v-if='item.tag') {{item.tag}}
+        //- .state
+        //-   span.type(v-if='item.type == 1') Bug
+        //-   span.type.newNeed(v-else-if='item.type == 2') 需求
+        span.tag {{item.finisherId ? item.finisherId.name : item.to.name}}
+        span.tag(v-if='item.level == 1') 待办
+        span.tag(v-if='item.level == 2') 待审核
+        span.tag(v-if='item.level == 5') 归档
+        //- .tag
+        //-   span.type(v-if='item.type == 1') Bug
+        //-   span.type.newNeed(v-else-if='item.type == 2') 需求
+        //- span.tag(v-if='item.version') V{{item.version}}
+    .loadMore(@click='getAllData' v-if='allData && allData.length > 0 && nextPageNo > 0') 加载更多
+    NoData(v-if='allData && allData.length == 0 && nextPageNo==0')
+    TodoEdit.todoEdit-wrapper(:curPost='curPost', :page='$route.name', :class='{"isEdit": isEdit}')

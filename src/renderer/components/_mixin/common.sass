@@ -1,0 +1,157 @@
+@import "./mixin.sass"
+
+// @font-face
+//   font-family: 'xiaoyu_font'
+//   src: url('/font/xiaoyu_font.eot')
+//   src: url('/font/xiaoyu_font.eot?#font-spider') format('embedded-opentype'), url('/font/xiaoyu_font.woff') format('woff'), url('/font/xiaoyu_font.ttf') format('truetype'), url('/font/xiaoyu_font.svg') format('svg')
+//   font-weight: normal
+//   font-style: normal
+*
+  padding: 0
+  margin: 0
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  box-sizing: border-box
+html
+  font-size: 10px
+  min-width: 100vw
+  min-height: 100vh
+body
+  font: $fw-nm 1.2rem "PingFang SC", "Helvetica Neue", "Lantinghei SC", Roboto, "Microsoft Yahei", Arial, sans-serif
+  overflow-x: hidden
+  width: 100vw
+  color: $f-color
+  background-color: white
+  // -webkit-font-smoothing: antialiased
+  -webkit-font-smoothing: initial
+  header, aside
+    -webkit-app-region: drag
+  button
+    -webkit-app-region: no-drag
+a
+  text-decoration: none
+  color: $a-color
+  font-weight: $fw-lg
+
+input, textarea, button
+  outline: none
+  -webkit-appearance: none
+  border-radius: 0
+
+.pc-only
+  display: block
+.mb-only
+  display: none
+@include small-screen
+  .pc-only
+    display: none !important
+  .mb-only
+    display: block
+
+.coverbg
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+
+.fade-enter-active, .fade-leave-active
+  transition: opacity 1s ease
+.fade-enter, .fade-leave-to
+  opacity: 0
+
+.anotation
+  color: $gray
+.absolute
+  position: absolute
+  left: 0
+  top: 0
+  padding-top: 50px
+  width: 100%
+.border-dive
+  width: 100%
+  border-bottom: $border-dark
+.section-wrapper
+  // box-shadow: $box-shadow
+  .section-title
+    padding: 0 10px
+    font-size: $fs-lg
+    font-weight: $fw-lg
+    line-height: 50px
+    border-bottom: $border
+    .a-right
+      float: right
+      font-size: $fs-nm
+      font-weight: $fw-nm
+  .section-content
+    .navigation-wrapper
+      position: initial
+      transform: translate(0)
+  .navigation-wrapper
+    position: fixed
+    top: 0
+    left: 50%
+    transform: translate(-50%)
+    z-index: 20
+    // .section-title
+    //   font-weight: $fw-lg
+    //   font-size: $fs-lg
+    //   line-height: 50px
+    .button-group
+      margin: 10px 15px
+      display: inline-block
+      button
+        margin-left: -1px
+        min-width: 70px
+        padding: 0 15px
+        height: 30px
+        line-height: 30px
+        border: $border
+        background: white
+        cursor: pointer
+        &:hover
+          background: #F1F4FB
+        &:first-child
+          border-radius: 15px 0 0 15px !important
+        &:last-child
+          border-radius: 0 15px 15px 0 !important
+      .active
+        background: $a-color !important
+        color: white !important
+.loadMore
+  display: block
+  text-align: center
+  line-height: 100px
+  color: $a-color
+  cursor: pointer
+// rest
+input, button, textarea, .ivu-select-selection, .ivu-select-dropdown, .ivu-modal-content
+  border-radius: 0 !important
+.ivu-tabs-nav
+  .ivu-tabs-tab
+    font-size: 12px
+    line-height: 33px
+  .ivu-tabs-tab-active
+    font-weight: $fw-lg
+.ivu-radio-group
+  overflow: hidden
+.w-e-toolbar
+  display: none !important
+.w-e-text-container
+  border: $border !important
+  border-top: $border !important
+  border-color: #dddee1 !important
+  height: 150px !important
+  z-index: 100 !important
+  &:active, &:focus, &:hover
+    border-color: #57a3f3 !important
+    outline: 0
+    box-shadow: 0 0 0 2px rgba(45,140,240,.2)
+
+.ivu-tabs-bar
+  position: fixed
+  z-index: 2
+  top: 50px
+  width: 100%
+  background: white
+.ivu-tabs
+  padding-top: 50px
+.ivu-form-item-label
+  color: $gray !important

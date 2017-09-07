@@ -1,0 +1,48 @@
+@import "../_mixin/mixin.sass"
+.section-wrapper
+  .navigation-wrapper
+    .version-select-wrapper
+      position: absolute
+      right: -100px
+      top: 10px
+      margin-right: 15px
+      display: inline-block
+      width: 80px
+      .version-select
+    .version-select-wrapper-date
+      right: -200px
+.section-content
+  padding: 30px
+
+  .border-dive
+    margin: 30px 0
+  .item-wrapper
+    margin-bottom: 30px
+    box-shadow: $box-shadow
+    text-align: center
+    overflow: hidden
+    .con
+      display: flex
+      margin: 15px 0
+      &:first-child
+        margin-top: 0
+      &:hover
+        background: $bg-color
+        .item-title
+          color: $f-color
+
+    .block
+      flex: 1
+      text-align: center
+      line-height: 50px
+      &:first-child
+        .item-title
+          font-size: 1.2rem
+      &:last-child
+        margin-right: 0
+      &.header
+        background: $bg-color
+      .item-title
+        font-size: 2rem
+      .des
+        color: $gray
