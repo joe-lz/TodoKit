@@ -12,7 +12,3 @@ thumbs.db
 
 _api.js
 src/
-.electron-vue/
-build/
-dist/
-static/
