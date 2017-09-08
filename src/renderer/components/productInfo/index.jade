@@ -29,16 +29,18 @@
         router-link(:to='{name: "ProductAllFilter"}' exact)
           i.iconfont.icon-filter
           span 全部任务
-
       .border-dive
       div.con
-        p.con-title 设置
+        p.con-title 产品
         router-link(:to='{name: "ProductMember"}' exact)
           i.iconfont.icon-chengyuan
           span 成员管理
         router-link(:to='{name: "ProductSetting"}' exact)
           i.iconfont.icon-settings
           span 产品设置
+        router-link(:to='{name: "ProductAdviceCollect"}' exact)
+          i.iconfont.icon-shoujianxiang
+          span 意见收集
     .main-wrapper
       router-view.contain-wrapper
     

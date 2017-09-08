@@ -1,0 +1,64 @@
+@import "../_mixin/mixin.sass"
+
+.section-wrapper
+  position: relative
+  .anotation
+    position: fixed
+    top: 0
+    right: 220px
+    z-index: 11
+    line-height: 50px
+  .top-wrapper
+    position: fixed
+    top: 0
+    left: 50%
+    transform: translate(-50%)
+    z-index: 11
+    padding: 10px 0
+    text-align: center
+    .top-link-info
+      overflow: hidden
+      display: inline-block
+      height: 30px
+      line-height: 30px
+      border: $border
+      border-radius: 15px
+      span, a
+        display: inline-block
+        height: 100%
+      .left
+        padding: 0 10px
+        background: $gray
+        color: white
+      .right
+        padding: 0 10px
+        background: $bg-youtube
+        color: $gray
+        cursor: pointer
+        &:hover
+          text-decoration: underline
+          color: $a-color
+  .section-content
+    ul
+      list-style: none
+      li
+        position: relative
+        padding: 15px
+        padding-right: 150px
+        border-top: $border
+        color: $gray
+        &:last-child
+          border-bottom: $border
+        &:hover
+          background: $bg-color
+        .content
+          margin-bottom: 5px
+        img
+          height: 50px
+          cursor: pointer
+        .operation
+          position: absolute
+          right: 15px
+          top: 15px
+          a
+            margin-left: 15px

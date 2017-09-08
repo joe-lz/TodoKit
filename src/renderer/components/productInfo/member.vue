@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import NoData from '@/components/_include/nodata'
+import NoData from '../_include/nodata'
 export default {
   name: 'ProductMember',
   components: {

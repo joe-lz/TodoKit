@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PmHeader from '@/components/header'
+import PmHeader from '../header'
 
 export default {
   name: 'ProductInfo',

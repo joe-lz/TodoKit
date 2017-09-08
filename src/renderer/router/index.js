@@ -3,7 +3,6 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 const Index = resolve => require(['@/components/index'], resolve)
-const About = resolve => require(['@/components/about'], resolve)
 const SignIn = resolve => require(['@/components/sign'], resolve)
 const SignUp = resolve => require(['@/components/sign/signup'], resolve)
 const SignUpSMS = resolve => require(['@/components/sign/signup-sms'], resolve)
@@ -17,13 +16,13 @@ const ProductSetting = resolve => require(['@/components/productInfo/setting'], 
 const ProductNotification = resolve => require(['@/components/productInfo/notification'], resolve)
 const ProductAllFilter = resolve => require(['@/components/productInfo/allFilter'], resolve)
 const ProductStatistics = resolve => require(['@/components/productInfo/statistics'], resolve)
+const ProductAdviceCollect = resolve => require(['@/components/productInfo/adviceCollect'], resolve)
 
 export default new Router({
   linkActiveClass: 'active',
   routes: [
     { path: '/', name: 'Index', component: Index, meta: { requireAuth: true } },
     { path: '/signin', name: 'SignIn', component: SignIn },
-    { path: '/about', name: 'About', component: About },
     { path: '/signup', name: 'SignUp', component: SignUp },
     { path: '/signup-sms', name: 'SignUpSMS', component: SignUpSMS },
     { path: '/user/setting', name: 'UserSetting', component: UserSetting, meta: { requireAuth: true } },
@@ -38,7 +37,8 @@ export default new Router({
         { path: 'setting', name: 'ProductSetting', component: ProductSetting, meta: { requireAuth: true } },
         { path: 'notification', name: 'ProductNotification', component: ProductNotification, meta: { requireAuth: true } },
         { path: 'allfilter', name: 'ProductAllFilter', component: ProductAllFilter, meta: { requireAuth: true } },
-        { path: 'statistics', name: 'ProductStatistics', component: ProductStatistics, meta: { requireAuth: true } }
+        { path: 'statistics', name: 'ProductStatistics', component: ProductStatistics, meta: { requireAuth: true } },
+        { path: 'adviceCollect', name: 'ProductAdviceCollect', component: ProductAdviceCollect, meta: { requireAuth: true } }
       ]
     },
     { path: '*', redirect: '/' }

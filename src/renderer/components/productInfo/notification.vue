@@ -4,7 +4,7 @@
 
 <script>
 import TodoEdit from './todoEdit'
-import NoData from '@/components/_include/nodata'
+import NoData from '../_include/nodata'
 export default {
   name: 'ProdcutNotification',
   components: {

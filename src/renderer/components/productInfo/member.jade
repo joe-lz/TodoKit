@@ -9,7 +9,7 @@ div
           .coverbg(:style='`background-image:url(${$api.link.qiniuUrl}${item.userId.avatar}${$api.link.qiniuImg})`')
             .del(@click='deleteUser(item.userId)')
               i.iconfont.icon-el-icon-delete
-          p {{item.userId.name || $api.placeholder.noname}}
+          p {{item.userId.name}}
           p.position {{item.userId.position}}
       NoData(v-else)
       p.fix-anotation 

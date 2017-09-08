@@ -5,7 +5,7 @@
 <script>
 import Loading from '../loading'
 import ProductItem from './productItem'
-import PmHeader from '@/components/header'
+import PmHeader from '../header'
 import ImgUpload from '../_upload/imgupload'
 export default {
   name: 'Index',

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import PmHeader from '@/components/header'
+import PmHeader from '../header'
 import ImgUpload from '../_upload/imgupload'
 export default {
   name: 'UserSetting',

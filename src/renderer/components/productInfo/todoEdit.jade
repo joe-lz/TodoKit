@@ -71,13 +71,13 @@
       .allData-wrapper
         .item-wrapper(v-for='item of allLog')
           span.time {{item.createdAt}}
-          span.from(@click='changeCommentToUser(item.from)') {{item.from.name || $api.placeholder.noname}}
+          span.from(@click='changeCommentToUser(item.from)') {{item.from.name}}
           span.action(v-if='item.action == 1') 指派给
           span.action(v-if='item.action == 2') 完成，等待
           span.action(v-if='item.action == 3') 拒绝
           span.action(v-if='item.action == 4') 评论
           span.action(v-if='item.action == 5') 归档该任务
-          span.to(v-if='item.action != 5' @click='changeCommentToUser(item.to)') {{item.to.name || $api.placeholder.noname}}
+          span.to(v-if='item.action != 5' @click='changeCommentToUser(item.to)') {{item.to.name}}
           span.action(v-if='item.action == 2') 审核归档
           .content(v-if='item.action != 5') {{item.content}}
         p.anotation 最多显示50条日志
@@ -86,7 +86,7 @@
         Input(size='large' v-model='formData.content')
       .comment-select
         Select.user-select(size='large' v-model='formData.to' placement='top')
-          Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name || $api.placeholder.noname}}
+          Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
       .comment-submit
         Button(size='large' type='primary' @click='createLog') 评论
 
@@ -94,8 +94,8 @@
     Form.form-wrapper(:label-width="60", ref="pointFormData", :model="pointFormData")
       Form-item.input-wrapper(label='指派给')
         Select.user-select(size='large' v-model='pointFormData.to' placement='bottom')
-          Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name || $api.placeholder.noname}}
-      Form-item.input-wrapper(label='描述')
+          Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+      Form-item.input-wrapper(label='评论')
         Input(type='textarea', :rows="4" v-model='pointFormData.content')
     div(slot='footer')
       Button(size='large' @click='isPoint = false') 取消
@@ -105,8 +105,8 @@
     Form.form-wrapper(:label-width="60", ref="finishFormData", :model="finishFormData")
       Form-item.input-wrapper(label='指派给')
         Select.user-select(size='large' v-model='finishFormData.to' placement='bottom')
-          Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name || $api.placeholder.noname}}
-      Form-item.input-wrapper(label='描述')
+          Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+      Form-item.input-wrapper(label='评论')
         Input(type='textarea', :rows="4" v-model='finishFormData.content')
     div(slot='footer')
       Button(size='large' @click='isFinish = false') 取消

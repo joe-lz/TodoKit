@@ -1,0 +1,16 @@
+.section-wrapper
+  p.anotation 非开发成员使用
+  .top-wrapper
+    p.top-link-info
+      span.left 公开意见反馈地址
+      a.right(@click='$api.Openlink(`https://www.todokit.vip/advice/${$route.params.id}`)' target='_blank') {{`https://www.todokit.vip/advice/${$route.params.id}`}}
+  .section-content
+    ul
+      li(v-for='item of allData')
+        .operation
+          a.gray(@click='changeLevel(2)')  完成
+          a.red(@click='changeLevel(3)') 忽略
+        .content(v-html='item.content')
+        a.gray(@click='$api.Openlink(`${$api.link.qiniuUrl}${item.adviceImg}${$api.link.qiniuImg}`)' v-if='item.adviceImg') 查看图片
+    .loadMore(@click='getAllData' v-if='allData && allData.length > 0 && nextPageNo > 0') 加载更多
+          

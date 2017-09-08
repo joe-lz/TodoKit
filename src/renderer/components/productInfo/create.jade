@@ -12,7 +12,7 @@
           Select.user-select(v-if='allUser && allUser.length > 20' size='large' v-model='formData.to' placement='top')
             Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}} -- {{item.userId.position}}
           Radio-group(v-else v-model='formData.to')
-            Radio(v-for='item of allUser', :label='item.userId._id', :key='item.userId._id') {{item.userId.name || $api.placeholder.noname}}
+            Radio(v-for='item of allUser', :label='item.userId._id', :key='item.userId._id') {{item.userId.name}}
         Form-item.input-wrapper(label='标题' prop='title')
           Input(size='large' v-model='formData.title')
         Form-item.input-wrapper(v-if='!isContent')
