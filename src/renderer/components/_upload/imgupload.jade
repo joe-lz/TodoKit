@@ -1,6 +1,0 @@
-.container(:id='`container-${imageName}`')
-  .coverbg.loading(v-if='isLoading' style="background-image:url(/static/loading.gif)")
-  .coverbg.contain(:style='`background-image:url(${$api.link.imgupload_bg}${$api.link.qiniuImg})`')
-    .coverbg.containbg(:style='`background-image:url(${picroot}${curValue}${$api.link.qiniuImg})`')
-  .pickfiles(:id='imageName')
-    i.iconfont.icon-cloudupload
