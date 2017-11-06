@@ -1,0 +1,22 @@
+.wrapper
+  .nav-wrapper
+    a.active {{ $t('message.notificationNav.all') }}
+  .content-wrapper
+    TodoEdit.todo-edit-wrapper(:curPost='curPost', :class='{"isEdit": isEdit}')
+    .list-wrapper
+      .list-item(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id, "isRead": item.isRead}')
+        span.from {{item.from.name || $api.placeholder.noname}}
+        span.action(v-if='item.action == 1') 指派给
+        span.action(v-if='item.action == 2') 完成，并指派给
+        span.action(v-if='item.action == 3') 拒绝
+        span.action(v-if='item.action == 4') 评论
+        span.action(v-if='item.action == 5') 归档
+        span.to 我
+        span.content 【{{item.postId.title}}】
+        //- span.content(v-if='item.content' v-html='item.content')
+        //- span.content(v-else) 【{{item.postId.title}}】
+        span.time {{item.createdAt}}
+      p.loadMore(@click='getAllData' v-if='allData && allData.length > 0 && nextPageNo > 0') 加载更多          
+      .noMore(v-if='allData && allData.length === 0 && nextPageNo === 0')
+        img(src="/static/noData.svg", alt="")
+        p 暂无数据

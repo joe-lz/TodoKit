@@ -1,0 +1,108 @@
+@import "./mixin.sass"
+
+*
+  padding: 0
+  margin: 0
+  -webkit-tap-highlight-color: rgba(0,0,0,0)
+  box-sizing: border-box
+html
+  font-size: 10px
+  min-width: 100vw
+  min-height: 100vh
+  background: white
+body
+  font: $fw-nm 1.2rem "PingFang SC", "Helvetica Neue", "Lantinghei SC", Roboto, "Microsoft Yahei", Arial, sans-serif
+  overflow-x: hidden
+  width: 100vw
+  min-height: 100vh
+  color: $f-color
+  background-color: white
+  // -webkit-font-smoothing: antialiased
+  -webkit-font-smoothing: initial !important
+  i
+    font-style: normal
+input, textarea, button, select
+  outline: none
+  -webkit-appearance: none
+  border: none
+  background: none
+  // border-radius: 0 !important
+  &::-webkit-input-placeholder
+    color: #b1b1b1
+
+a
+  color: $f-color
+  text-decoration: none
+  &:hover
+    color: $gray
+  &.active
+    color: $a-color
+.pc-only
+  display: block
+.mb-only
+  display: none
+@include small-screen
+  .pc-only
+    display: none !important
+  .mb-only
+    display: block
+
+.coverbg
+  background-position: center
+  background-size: cover
+  background-repeat: no-repeat
+
+.loadMore
+  margin: 30px auto
+  width: 120px
+  height: 34px
+  text-align: center
+  line-height: 34px
+  border-radius: 34px
+  background: $gray-sub-sub
+  color: $gray
+  cursor: pointer
+  font-size: $fs-nm
+  font-weight: $fw-lg
+  transition: $transition
+  &:hover
+    color: white
+    background: $a-color
+.noMore
+  padding-top: 150px
+  position: relative
+  text-align: center
+  color: #F4F4F7
+  img
+    height: 150px
+  p
+    position: absolute
+    bottom: 30px
+    width: 100%
+
+.ivu-select-selection
+  // border-radius: 0
+#editor
+  margin-bottom: 10px
+  .w-e-toolbar
+    display: none
+  .w-e-text-container
+    z-index: 10 !important
+    width: 100% !important
+    height: 100px !important
+    border: $border !important
+    transition: $transition
+    border-radius: 4px
+    &:focus, &:active, &:hover
+      border: 1px solid #57a3f3 !important
+      box-shadow: 0 0 0 2px rgba(45,140,240,.2) !important
+.ivu-modal
+  .ivu-modal-header
+    border-bottom: solid 1px #F1F4FB
+  .ivu-modal-footer
+    border-top: solid 1px #F1F4FB
+  .ivu-modal-body
+    input
+      border: solid 1px #F1F4FB
+      &:hover, &:active
+        border: 1px solid #57a3f3

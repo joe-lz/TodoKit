@@ -1,0 +1,40 @@
+.wrapper.all-wrapper
+  TodoEdit.todo-edit-wrapper(:curPost='curPost', :class='{"isEdit": isEdit}')
+  .filter-wrapper
+    //- Select(placeholder='标签' v-model='formData.tag' @on-change='handleChange')
+    //-   Option(v-for='item of curProduct.tags', :value='item', :key='item')
+    Select(placeholder='全部状态' @on-change='handleChange' v-model='level')
+      Option(v-for='item of levelArr', :value='item.id', :key='item.id') {{item.name}}
+    //- Select(placeholder='创建人' v-model='formData.createrId' @on-change='handleChange')
+    //-   Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+    //- Select(placeholder='执行人' v-model='formData.to' @on-change='handleChange')
+    //-   Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+    //- Select(placeholder='完成人' v-model='formData.finisherId' @on-change='handleChange')
+    //-   Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+    //- Select(placeholder='类型' v-model='formData.type' @on-change='handleChange')
+    //-   Option(v-for='item of typeArr', :value='item.id', :key='item.id') {{item.name}}
+    //- Select(placeholder='版本' v-model='formData.version' @on-change='handleChange')
+    //-   Option(v-for='item of curProduct.versions', :value='item', :key='item')
+  .list-wrapper
+    .list-item(v-for='item of allData' @click.stop='handleEdit(item)', :class='{"selected": selected==item._id}')
+      .isImportantAndisUrgent
+        span.isImportant(v-if='item.isImportant') 重要
+        span.not(v-else) -
+        span.isUrgent(v-if='item.isUrgent') 紧急
+        span.not(v-else) -
+      p.title(v-text='item.title')
+      span.time {{$moment(item.createdAt).format('MM-DD HH:mm dddd')}}
+      .state-wrapper
+        span.tag(v-if='item.tag') {{item.tag}}
+        .state
+          span.type(v-if='item.type == 1') Bug
+          span.type.newNeed(v-else-if='item.type == 2') 需求
+        //- span.tag {{item.to.name}}
+        span.tag(v-if='item.version') V{{item.version}}
+    p.loadMore(@click='getAllData' v-if='allData && allData.length > 0 && nextPageNo > 0') 加载更多          
+    .noMore(v-if='allData && allData.length === 0 && nextPageNo === 0')
+      img(src="/static/noData.svg", alt="")
+      p 暂无数据
+
+      
+      

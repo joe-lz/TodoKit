@@ -1,0 +1,58 @@
+@import "../../../mixin/mixin.sass"
+
+.wrapper
+  // width: 800px
+  margin: 0 auto
+.section-content
+  padding: 30px
+  .fix-anotation
+    position: fixed
+    bottom: 0
+    left: 0
+    padding-left: 200px
+    width: 100%
+    z-index: 100
+    line-height: 100px
+    font-size: 14px
+    text-align: center
+    color: $gray
+    span
+      color: $a-color
+  .item-wrapper
+    vertical-align: top
+    display: inline-block
+    margin-bottom: 30px
+    margin-right: 50px
+    width: 100px
+    text-align: center
+    font-weight: $fw-lg
+    cursor: pointer
+    &.member-plus
+      .coverbg
+        i
+          position: relative
+          top: -3px
+          line-height: 100px
+          font-size: 2.4rem
+          color: #bbcaec
+    .position
+      color: $gray
+    .coverbg
+      margin-bottom: 10px
+      width: 100%
+      height: 100px
+      box-shadow: $box-shadow
+      &:hover
+        .del
+          display: flex
+          justify-content: center
+          align-items: center
+          width: 100%
+          height: 100%
+          color: white
+          background: rgba(0,0,0,0.6)
+          cursor: pointer
+      .del
+        display: none
+        i
+          font-size: 2rem

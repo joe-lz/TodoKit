@@ -1,0 +1,26 @@
+@import "../../mixin/mixin.sass"
+
+.wrapper
+  display: flex
+  flex-direction: column
+  .nav-wrapper
+    position: relative
+    z-index: 100
+    text-align: center
+    font-size: $fs-nm
+    font-weight: $fw-lg
+    line-height: 60px
+    a
+      display: inline-block
+      width: 120px
+      height: 30px
+      line-height: 30px
+      color: $gray
+      &.active
+        color: $f-color
+      &:hover
+        color: $f-color
+  .content-wrapper
+    flex: 1
+    overflow: hidden
+    overflow-y: scroll

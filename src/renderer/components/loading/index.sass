@@ -1,0 +1,31 @@
+.one-wrapper
+  position: fixed
+  z-index: 1000
+  top: 0
+  left: 0
+  background: rgba(0,0,0,0.8)
+  width: 100vw
+  height: 100vh
+  .container
+    position: absolute
+    left: 50%
+    top: 50%
+    width: 60px
+    height: 60px
+    transform: translate(-50%, -50%)
+.line
+  position: absolute
+  width: 60px
+  height: 4px
+  background: #fff
+  animation: spin 1.5s infinite ease
+  &:nth-of-type(2)
+    animation-delay: 0.1s
+  &:nth-of-type(3)
+    animation-delay: 0.2s
+  &:nth-of-type(4)
+    animation-delay: 0.3s
+
+@keyframes spin
+  100%
+    transform: rotate(360deg)

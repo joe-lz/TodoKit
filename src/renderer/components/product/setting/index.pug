@@ -1,0 +1,11 @@
+.wrapper.setting-wrapper
+  .nav-wrapper
+    a(:class='{"active": selected==1}' @click='changeNav(1)') {{ $t('message.settingNav.basic') }}
+    a(:class='{"active": selected==2}' @click='changeNav(2)') {{ $t('message.settingNav.version') }}
+    a(:class='{"active": selected==3}' @click='changeNav(3)') {{ $t('message.settingNav.tags') }}
+    a(:class='{"active": selected==4}' @click='changeNav(4)') {{ $t('message.settingNav.member') }}
+  .content-wrapper
+    Basic(v-if='selected == 1')
+    Version(v-if='selected == 2')
+    Tag(v-if='selected == 3')
+    Member(v-if='selected == 4')

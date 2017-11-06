@@ -1,0 +1,43 @@
+@import "../mixin/mixin.sass"
+
+.container
+  position: relative
+  width: 150px
+  height: 150px
+  border: 1px solid #F1F4FB
+  &:hover
+    .pickfiles
+      display: flex
+  .contain
+    width: 100%
+    height: 100%
+  .loading
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 10
+    width: 100%
+    height: 100%
+    background-size: 30%
+    background-color: white
+
+
+  .containbg
+    width: 100%
+    height: 100%
+    // background-size: contain
+  .pickfiles
+    position: absolute
+    z-index: 20
+    left: 0
+    top: 0
+    width: 100%
+    height: 100%
+    background-color: rgba(0,0,0,0.6)
+    color: white
+    justify-content: center
+    align-items: center
+    display: none
+    cursor: pointer
+    i
+      font-size: 5rem

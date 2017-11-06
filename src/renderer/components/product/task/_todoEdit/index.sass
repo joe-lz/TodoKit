@@ -1,0 +1,178 @@
+@import "../../../mixin/mixin.sass"
+
+.todoEdit-wrapper
+  position: fixed
+  z-index: 1000
+  top: 0
+  display: flex
+  flex-direction: column
+  width: 600px
+  height: 100vh
+  background: white
+  box-shadow: $box-shadow
+  text-align: justify
+  .top-info
+    padding: 0 15px
+    padding-top: 30px
+    padding-bottom: 15px
+    border-bottom: $border
+    p.title
+      position: relative
+      margin-bottom: 30px
+      font-size: $fs-nm
+      font-weight: $fw-lg
+      line-height: 24px
+      &:before
+        content: ''
+        display: block
+        position: absolute
+        left: -15px
+        top: 3px
+        width: 5px
+        height: 15px
+        background: $f-color
+    p.des
+      margin-bottom: 30px
+      color: $gray
+      line-height: 20px
+    .con
+      line-height: 30px
+      color: $gray
+      font-weight: $fw-lg
+      &.con1
+        margin-top: 10px
+        color: $red
+      &.con2
+        color: $yellow
+    .img-contain
+      margin-bottom: 30px
+      min-height: 100px
+      img
+        height: 100px
+        display: block
+        cursor: pointer
+      .iconfont
+        display: none
+      .isShowImg
+        position: fixed
+        z-index: 100
+        left: 0
+        top: 0
+        width: 100vw
+        height: 100vh
+        background: rgba(0,0,0,0.5)
+        display: flex
+        justify-content: center
+        align-items: center
+        .iconfont
+          position: absolute
+          top: 10px
+          right: 10px
+          display: block
+          width: 50px
+          height: 50px
+          text-align: center
+          line-height: 50px
+          font-size: 2rem
+          color: white
+          cursor: pointer
+        img
+          width: initial !important
+          height: initial !important
+          max-width: 80%
+          max-height: 80%
+  .bottom-info
+    flex: 1
+    position: relative
+    overflow: hidden
+    .operation-wrapper
+      padding-bottom: 10px
+      position: absolute
+      bottom: 0
+      left: 0
+      z-index: 10
+      width: 100%
+      .comment-group
+        padding: 10px
+        padding-top: 15px
+        position: absolute
+        bottom: -500px
+        z-index: 100
+        width: 100%
+        transition: $transition
+        background: white
+        box-shadow: $box-shadow
+        &.isComment
+          bottom: 0
+        .btn-group2
+          .user-select
+            display: inline-block
+            float: left
+            width: 150px
+          .btn
+            margin-left: 15px
+            float: right
+      .btn-group
+        text-align: center
+        a
+          margin: 0 15px
+          display: inline-block
+          width: 44px
+          height: 44px
+          line-height: 44px
+          text-align: center
+          border-radius: 50%
+          background: $gray-sub
+          color: white
+          font-size: $fs-sm
+          &:hover
+            background: $a-color
+          &.active
+            background: $a-color
+    .log-info
+      padding: 0 15px
+      padding-top: 30px
+      padding-bottom: 50px
+      position: relative
+      height: 100%
+      overflow-y: scroll
+      .allData-wrapper
+        .anotation
+          text-align: center
+          color: $bg-color
+          line-height: 100px
+        .item-wrapper
+          position: relative
+          margin-bottom: 30px
+          line-height: 20px
+          overflow: hidden
+          span.from
+            color: $gray
+            cursor: pointer
+            &:hover
+              text-decoration: underline
+          span.action
+            margin: 0 10px
+            font-weight: $fw-lg
+            color: $a-color
+          span.to
+            color: $gray
+            cursor: pointer
+            &:hover
+              text-decoration: underline
+          span.time
+            position: absolute
+            right: 30px
+            top: 0
+            color: $gray-sub
+          span.read
+            position: absolute
+            right: 0
+            color: $red
+            font-weight: $fw-lg
+            &.yes
+              color: $gray
+          .content
+            margin-top: 5px
+            font-weight: $fw-lg
+            word-wrap: break-word

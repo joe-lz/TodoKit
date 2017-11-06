@@ -1,0 +1,11 @@
+.wrapper
+  .nav-wrapper
+    a(:class='{"active": selected==1}' @click='changeNav(1)') {{ $t('message.taskNav.todo') }}
+    //- a(:class='{"active": selected==2}' @click='changeNav(2)') {{ $t('message.taskNav.log') }}
+    a(:class='{"active": selected==3}' @click='changeNav(3)') {{ $t('message.taskNav.all') }}
+    a(:class='{"active": selected==4}' @click='changeNav(4)') {{ $t('message.taskNav.statistic') }}
+  .content-wrapper
+    Todo(v-if='selected == 1')
+    //- Todo(v-if='selected == 2')
+    All(v-if='selected == 3')
+    Statistic(v-if='selected == 4')

@@ -1,0 +1,69 @@
+@import "../../mixin/mixin.sass"
+
+.wrapper
+  display: flex
+  flex-direction: column
+  .todo-edit-wrapper
+    transition: $transition
+    right: -600px
+    // right: 0
+    &.isEdit
+      right: 0
+  .nav-wrapper
+    text-align: center
+    font-size: $fs-nm
+    font-weight: $fw-lg
+    a
+      display: inline-block
+      width: 120px
+      line-height: 60px
+      color: $gray
+      &.active
+        color: $f-color
+      &:hover
+        color: $f-color
+  .content-wrapper
+    flex: 1
+    overflow: hidden
+    overflow-y: scroll
+    padding-top: 30px
+    .list-wrapper
+      .list-item
+        position: relative
+        padding-left: 20px
+        padding-right: 100px
+        height: 44px
+        line-height: 44px
+        font-size: $fs-sm
+        cursor: pointer
+        overflow: hidden
+        opacity: 1
+        font-weight: $fw-lg
+        text-overflow: ellipsis
+        overflow: hidden
+        white-space: nowrap
+        &.isRead
+          opacity: 0.5
+          .action
+            color: $gray
+        &.selected
+          background: $gray-sub-sub
+          opacity: 1
+        &:hover
+          background: $gray-sub-sub
+        .from
+        .action
+          margin: 0 5px
+          color: $a-color
+        .to
+        .content
+          padding-right: 140px
+          flex: 1
+          margin-left: 15px
+          text-overflow: ellipsis
+          overflow: hidden
+          white-space: nowrap
+        .time
+          position: absolute
+          right: 10px
+          color: $gray-sub

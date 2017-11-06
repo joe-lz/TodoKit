@@ -1,0 +1,78 @@
+@import "../../mixin/mixin.sass"
+.wrapper
+  position: absolute
+  left: 0
+  top: 0
+  z-index: 100
+  padding-top: 10px
+  height: 100vh
+  background: white
+  // box-shadow: $box-shadow
+  transition: $transition
+  overflow: hidden
+  .product-logo-wrapper.menu-list
+    cursor: pointer
+    color: $f-color !important
+    display: block
+    // &:hover
+    //   background: $bg-color
+    .left
+      .logo
+        display: inline-block
+        width: 30px
+        height: 30px
+        background-size: contain
+    .right
+      font-weight: $fw-lg
+      i
+        position: relative
+        top: 1px
+        margin-left: 5px
+        line-height: 30px
+    // i
+    //   position: absolute
+    //   right: 20px
+    //   line-height: 30px
+  .menu-wrapper
+    margin-top: 150px
+    .menu-list
+      margin: 15px 0
+  .menu-list
+    padding-top: 15px
+    display: block
+    white-space: nowrap
+    height: 60px
+    cursor: pointer
+    .left
+      vertical-align: top
+      display: inline-block
+      width: 70px
+      text-align: center
+      font-size: 0
+      i
+        display: inline-block
+        width: 30px
+        height: 30px
+        line-height: 30px
+        text-align: center
+        background-size: contain
+        font-size: 2rem
+    .right
+      vertical-align: top
+      display: inline-block
+      line-height: 30px
+      font-weight: $fw-lg
+      font-size: $fs-nm
+  .userinfo-wrapper.menu-list
+    position: absolute
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 60px
+    .left
+      .avatar
+        display: inline-block
+        width: 30px
+        height: 30px
+        box-shadow: $box-shadow
+        border-radius: 50%

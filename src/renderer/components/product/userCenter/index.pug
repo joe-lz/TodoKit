@@ -1,0 +1,8 @@
+.wrapper
+  .nav-wrapper
+    a(:class='{"active": selected==1}' @click='changeNav(1)') {{ $t('message.meNav.profile') }}
+    a(:class='{"active": selected==2}' @click='changeNav(2)') {{ $t('message.meNav.donate') }}
+    a(@click='$api.Openlink("https://github.com/jeodiong/TodoKit")') {{ $t('message.meNav.github') }}
+  .content-wrapper
+    Profile(v-if='selected == 1')
+    Donate(v-if='selected == 2')

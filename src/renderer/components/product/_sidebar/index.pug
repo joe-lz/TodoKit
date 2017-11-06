@@ -1,0 +1,33 @@
+.wrapper
+  router-link(:to='{name: "Index"}').product-logo-wrapper.menu-list
+    .left
+      .logo.coverbg(:style='`background-image:url(${$api.link.qiniuUrl}${curProduct.logo})`')
+    .right 
+      span {{curProduct.name}}
+      i.iconfont.icon-qiehuan
+    //- i.iconfont.icon-qiehuan
+  .menu-wrapper
+    router-link.menu-list(:to='{name: "ProductTaskCreate", params: $route.params.id}')
+      .left
+        i.iconfont.icon-createBom
+      .right {{ $t('message.nav.create') }}
+    router-link.menu-list(:to='{name: "ProductTask", params: $route.params.id}')
+      .left
+        i.iconfont.icon-lishirenwu
+      .right {{ $t('message.nav.task') }}
+    router-link.menu-list(:to='{name: "ProductNotification", params: $route.params.id}')
+      .left
+        i.iconfont.icon-xiaoxi
+      .right {{ $t('message.nav.notification') }}
+    router-link.menu-list(:to='{name: "ProductSetting", params: $route.params.id}')
+      .left
+        i.iconfont.icon-setting1
+      .right {{ $t('message.nav.setting') }}
+  .userinfo-wrapper.menu-list
+    router-link(:to='{name: "ProductUserCenter", params: $route.params.id}')
+      .left
+        .avatar.coverbg(:style='`background-image:url(${$api.link.qiniuUrl}${$api.GetAuth().userInfo.avatar})`')
+      .right 
+        span {{$api.GetAuth().userInfo.name}}
+        span.split /
+        span {{$api.GetAuth().userInfo.position}}

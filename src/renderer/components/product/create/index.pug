@@ -1,0 +1,8 @@
+.wrapper
+  .nav-wrapper
+    a(:class='{"active": selected==1}' @click='changeNav(1)') {{ $t('message.createNav.create') }}
+    a(:class='{"active": selected==2}' @click='changeNav(2)') {{ $t('message.createNav.history') }}
+  .content-wrapper
+    Create(v-if='selected == 1')
+    History(v-if='selected == 2')
+  

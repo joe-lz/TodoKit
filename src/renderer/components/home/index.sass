@@ -1,0 +1,52 @@
+@import "../mixin/mixin.sass"
+
+.one-wrapper
+  position: relative
+  width: 100vw
+  height: 100vh
+  background: white
+  .two-wrapper
+    padding-top: 100px
+    .product-lists
+      margin: 0 auto
+      width: 400px
+      box-shadow: $box-shadow
+      overflow: hidden
+      .item-wrapper.add
+        position: relative
+        height: 100px
+        line-height: 100px
+        text-align: center
+        font-size: 2rem
+        color: $gray
+        cursor: pointer
+        &:hover
+          background: $bg-color
+          .operation
+            opacity: 1
+        .operation
+          opacity: 0
+          position: absolute
+          left: 0
+          top: 0
+          z-index: 10
+          width: 100%
+          height: 100%
+          background: $bg-color
+          transition: $transition
+          .btn
+            display: inline-block
+            width: 50%
+            font-size: $fs-nm
+            &:hover
+              font-weight: $fw-lg
+              color: $a-color
+          .create
+            border-right: 1px solid white
+        .con
+          width: 100%
+          height: 100%
+          .plus
+            position: relative
+            top: -2px
+            margin-right: 5px

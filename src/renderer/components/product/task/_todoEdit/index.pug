@@ -1,0 +1,60 @@
+.todoEdit-wrapper(@click.stop='doNothing')
+  .top-info
+    p.title {{curPost.title}}
+    p.des(v-html='curPost.content')
+    .img-contain(v-if='curPost.noteImg')
+      .img-wrapper(:class='{"isShowImg": isShowImg}')
+        img.noteImg(:src='`${$api.link.qiniuUrl}${curPost.noteImg}${$api.link.qiniuImg}`', alt="" @click='hideImg')
+        i.iconfont.icon-guanbi(@click='isShowImg = false')
+    .con.con1
+      span.isImportant(v-if='curPost.isImportant') 重要
+      span.not(v-else) 不重要
+      | ／
+      span.isUrgent(v-if='curPost.isUrgent') 紧急
+      span.not(v-else) 不紧急
+    .con.con2
+      span {{curPost.tag}}
+      span ／
+      span {{curPost.version}}
+      span ／
+      span(v-if='curPost.level == 1') 待办
+      span(v-if='curPost.level == 2') 待审核
+      span(v-if='curPost.level == 5') 已归档
+      span ／
+      span.type(v-if='curPost.type == 1') Bug
+      span.type(v-else-if='curPost.type == 2') 需求
+    .con.time(v-text='$moment(curPost.createdAt).format("YYYY-MM-DD H:mm")')
+  .bottom-info
+    .operation-wrapper
+      .comment-group(:class='{"isComment": isComment}')
+        #editor
+        .btn-group2
+          Select.user-select(v-model='formData.to' placement='top' placeholder='选择成员')
+            Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+          Button.btn(type='primary' @click='handleSubmit' v-if='formData.action === 4') 评论
+          Button.btn(type='primary' @click='handleSubmit' v-if='formData.action === 1') 指派
+          Button.btn(type='primary' @click='handleSubmit' v-if='formData.action === 2') 完成
+          Button.btn(type='primary' @click='handleSubmit' v-if='formData.action === 5') 归档
+          Button.btn(@click='isComment = false') 取消
+      .btn-group(v-if='!isComment')
+        a(@click='showCommentGroup(4)') 评论
+        a(@click='showCommentGroup(1)') 指派
+        a(@click='showCommentGroup(2)' v-if='curPost.level !== 2') 完成
+        a(@click='showCommentGroup(5)' v-if='curPost.level === 2') 归档
+    .log-info
+      .allData-wrapper
+        .item-wrapper(v-for='item of allLog')
+          span.time {{item.createdAt}}
+          span.read(:class='{"yes": item.isRead}') {{item.isRead ? "已读" : "未读"}}
+          span.from(@click='changeCommentToUser(item.from)') {{item.from.name}}
+          span.action(v-if='item.action == 1') 指派给
+          span.action(v-if='item.action == 2') 完成，等待
+          span.action(v-if='item.action == 3') 拒绝
+          span.action(v-if='item.action == 4') 评论
+          span.action(v-if='item.action == 5') 归档该任务
+          span.to(v-if='item.action != 5' @click='changeCommentToUser(item.to)') {{item.to.name}}
+          span.action(v-if='item.action == 2') 审核归档
+          //- .content(v-if='item.action != 5') {{item.content}}
+          .content(v-html='item.content')
+        p.anotation 最多显示50条日志
+    

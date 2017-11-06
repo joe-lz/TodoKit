@@ -1,0 +1,10 @@
+.wrapper.tag-wrapper(v-if='curProduct.tags')
+  Form.form-wrapper(:label-width="60")
+    Form-item.input-wrapper(label='标签')
+      Input(size='large' v-model='tag')
+    Form-item.input-wrapper.submit-wrapper
+      Button(type='primary' @click='handleSubmit', :loading="modal_create_loading") 添加
+  .tags-list
+    .item(v-for='item of curProduct.tags', :key='item')
+      p {{item}}
+      a(@click='handleDel(item)') 删除

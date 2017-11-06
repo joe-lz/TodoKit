@@ -1,0 +1,42 @@
+.wrapper.create-task-wrapper
+  Form.form-wrapper(:label-width="80", :rules="ruleValidate", ref="formData", :model="formData")
+    .bottom-wrapper
+      Form-item.input-wrapper(:label="$t('message.noun.title')" prop='title')
+        Input(v-model='formData.title' size='large')
+      Form-item.input-wrapper(:label="$t('message.noun.des')")
+        #editor
+      Form-item.input-wrapper(v-if='isAddImg')
+        ImgUpload(:folderName='`noteImg/${$route.params.id}/`', 
+        :imgUrl='formData.noteImg', 
+        :picroot='$api.link.qiniuUrl',
+        imageName='createpost'
+        @fileUploaded='fileUploaded')
+      Form-item.input-wrapper
+        Button.addImg(@click='isAddImg=true' v-if='!isAddImg') {{$t('message.noun.addImage')}}
+        Button.btn-submit(type="primary" @click='handleSubmit', :loading="modal_create_loading") {{$t('message.noun.create')}}
+
+      Form-item.input-wrapper(:label="$t('message.noun.to')" prop='to')
+        Select.user-select(v-if='allUser && allUser.length > 20' size='large' v-model='formData.to' placement='top')
+          Option(v-for='item of allUser', :value='item.userId._id', :key='item.userId._id') {{item.userId.name}} -- {{item.userId.position}}
+        Radio-group(v-else v-model='formData.to')
+          Radio.radio-item(v-for='item of allUser', :label='item.userId._id', :key='item.userId._id') {{item.userId.name}}
+      Form-item.input-wrapper(:label="$t('message.noun.tag')")
+        Radio-group(v-model='formData.tag' type='button' v-if='curProduct')
+          Radio(v-for='item of curProduct.tags', :label='item', :key='item')
+      .inline-block
+        Form-item.input-wrapper(:label="$t('message.noun.importance')")
+          Radio-group.radio-group(v-model='formData.isImportant')
+            Radio.radio-item(label='true') {{$t('message.noun.high')}}
+            Radio.radio-item(label='false') {{$t('message.noun.low')}}
+        Form-item.input-wrapper(:label="$t('message.noun.urgency')")
+          Radio-group.radio-group(v-model='formData.isUrgent')
+            Radio.radio-item(label='true') {{$t('message.noun.high')}}
+            Radio.radio-item(label='false') {{$t('message.noun.low')}}
+      .inline-block
+        Form-item.input-wrapper(:label="$t('message.noun.type')")
+          Radio-group(v-model='formData.type')
+            Radio.radio-item(label='2') {{$t('message.noun.requirements')}}
+            Radio.radio-item(label='1') {{$t('message.noun.bug')}}
+        Form-item.input-wrapper(:label="$t('message.noun.version')" prop='version')
+          Select(size='large' v-model='formData.version' placement='top', :placeholder="$t('message.noun.version')")
+            Option(v-for='item of curProduct.versions', :value='item', :key='item')

@@ -1,0 +1,53 @@
+// font----------------------------------
+$fs-sm: 1.2rem
+$fs-nm: 1.4rem
+$fs-lg: 1.6rem
+
+$fw-sm: 200
+$fw-nm: 400
+$fw-lg: 500
+
+// color----------------------------------
+$main-color: #222
+$f-color: #222
+$gray: #92969c
+$gray-sub: #b1b1b1
+$gray-sub-sub: #e8e8e8
+
+$a-color: #007fff
+
+$bg-color: #f5f5f5
+
+$yellow: #ff9900
+$red: #ed3f14
+$green: #19be6b
+
+// box-shadow
+$box-shadow: 0 0 8px 0 rgba(232,237,250,.6), 0 2px 4px 0 rgba(232,237,250,.5)
+$box-shadow1: 0 20px 25.8px 3.2px rgba(202, 206, 209, 0.19)
+
+$transition: all 0.1s ease
+// border
+$border: solid 1px #F1F4FB
+// media
+@mixin mini-screen
+  @media only screen and (max-width: 370px)
+    @content
+@mixin small-screen
+  @media only screen and (max-width: 769px)
+    @content
+@mixin middle-screen
+  @media only screen and (min-width: 768px) and (max-width: 1000px)
+    @content
+@mixin large-screen
+  @media only screen and (min-width: 1000px)
+    @content
+
+@mixin iphone6p-screen
+  @media only screen and (min-width: 400px) and (max-width: 415px)
+    @content
+// @include mini-screen
+// @include iphone6p-screen
+// @include small-screen
+// @include middle-screen
+// @include large-screen
