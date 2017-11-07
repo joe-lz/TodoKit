@@ -13,3 +13,15 @@ thumbs.db
 _api.js
 src/
 .electron-vue
+
+
+build/icons
+dist
+static
+.babelrc
+.eslintignore
+.eslintrc.js
+.travis.yml
+appveyor.yml
+package-lock.json
+package.json
