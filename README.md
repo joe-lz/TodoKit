@@ -1,4 +1,6 @@
-# TodoKit    2.0     Beta
+# TodoKit 
+
+## v2.0 Beta
 
 TodoKit是一个免费的高颜值产品需求和Bug管理软件，包括Mac客户端和网页版。
 官网：[https://www.todokit.vip](https://www.todokit.vip)
@@ -71,3 +73,4 @@ TodoKit是一个免费的高颜值产品需求和Bug管理软件，包括Mac客�
 ## Contribution
 
 欢迎前端开发者和我一起做这件事。
+
