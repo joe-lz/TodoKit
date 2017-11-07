@@ -21,14 +21,14 @@ TodoKit是一个免费的高颜值产品需求和Bug管理软件，包括Mac客�
  1. 加入已有产品
  2. 创建新产品
 
-![我的产品](https://ws2.sinaimg.cn/large/006tNc79gy1fjk8q3j9ojj31kw124q7v.jpg)
+![我的产品](https://ws4.sinaimg.cn/large/006tNc79gy1fl9hn6u6mtj31kw132dlz.jpg)
 
 
 ## 我的任务
 
 点击我的产品后，进入当前产品，我的任务列表
 
-![我的任务](https://ws3.sinaimg.cn/large/006tNc79gy1fjk8zi5zssj31kw124dn8.jpg)
+![我的任务](https://ws2.sinaimg.cn/large/006tNc79gy1fl9hnl2tqzj31kw132jzd.jpg)
 
 
 ### 任务流转
@@ -39,7 +39,7 @@ TodoKit是一个免费的高颜值产品需求和Bug管理软件，包括Mac客�
  2. 完成
  3. 归档
 
-![我的任务](https://ws2.sinaimg.cn/large/006tNc79gy1fjk91eha5vj31kw124qb1.jpg)
+![我的任务](https://ws3.sinaimg.cn/large/006tNc79gy1fl9hojzkvjj31kw132k4l.jpg)
 
 
 ### 创建任务
@@ -49,27 +49,24 @@ TodoKit是一个免费的高颜值产品需求和Bug管理软件，包括Mac客�
  1. 指派人
  2. 任务标题
 
-![创建任务](https://ws4.sinaimg.cn/large/006tNc79gy1fjk93zcqtxj31kw1240ze.jpg)
+![创建任务](https://ws2.sinaimg.cn/large/006tNc79gy1fl9hpjjuo4j31kw132n5i.jpg)
 
 
 ## 统计
 
-![统计](https://ws4.sinaimg.cn/large/006tNc79gy1fjk95gedwpj31kw124jxs.jpg)
+![统计](https://ws4.sinaimg.cn/large/006tNc79gy1fl9hpzuhb4j31kw132qb6.jpg)
 
 
 ## 成员管理
 
 因为是适合小团队的软件，所以人数限制10人，更多的人数团队建议使用更全面的管理系统，但是如果觉得TodoKit好用的话，可以联系我扩大人数限制。
 
-![成员管理](https://ws3.sinaimg.cn/large/006tNc79gy1fjk98qqexvj31kw124wte.jpg)
+![成员管理](https://ws4.sinaimg.cn/large/006tNc79gy1fl9hqctbvoj31kw132e0d.jpg)
 
 
-## 意见收集
 
-由于人数限制的原因，建议不要将非开发测试人员加入项目，意见收集提供对外的网址，用于收集他人意见建议。
-
-![成员管理](https://ws1.sinaimg.cn/large/006tNc79gy1fjk9egv4fwj31kw124tg6.jpg)
-
+## 账号设置
+![账号设置](https://ws3.sinaimg.cn/large/006tNc79gy1fl9hqwau1xj31kw13247z.jpg)
 
 ## Contribution
 
