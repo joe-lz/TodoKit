@@ -25,7 +25,7 @@
       Form-item.input-wrapper(label='号码' prop="mobile")
         Input(size='large' v-model='formData.mobile')
     div(slot='footer')
-      Button(size='large' @click='isModal = false') 取消
-      Button(type="primary" size='large' @click='handleAdd', :loading="modal_create_loading") 添加
+      Button(@click='isModal = false') 取消
+      Button(type="primary" @click='handleAdd', :loading="modal_create_loading") 添加
       
       

@@ -12,22 +12,22 @@ export default {
     }
   },
   created () {
-    this.getProductStateInfo(this.item.productId._id)
+    // this.getProductStateInfo(this.item.productId._id)
   },
   methods: {
-    getProductStateInfo (productId) {
-      let url = this.$api.getProductStateInfo
-      let body = {
-        data: {
-          productId
-        }
-      }
-      this.$http.post(url, body).then((res) => {
-        if (res.data.code === 0) {
-          this.stateInfo = res.data.data
-        }
-      })
-    }
+    // getProductStateInfo (productId) {
+    //   let url = this.$api.getProductStateInfo
+    //   let body = {
+    //     data: {
+    //       productId
+    //     }
+    //   }
+    //   this.$http.post(url, body).then((res) => {
+    //     if (res.data.code === 0) {
+    //       this.stateInfo = res.data.data
+    //     }
+    //   })
+    // }
   }
 }
 </script>

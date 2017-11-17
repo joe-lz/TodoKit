@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 
 import VueI18n from 'vue-i18n'
+import VueSocketio from 'vue-socket.io'
 import messages from './locale/zh'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'
@@ -22,6 +23,7 @@ const i18n = new VueI18n({
   messages
 })
 Vue.use(iView)
+Vue.use(VueSocketio, api.apiRoot)
 Vue.prototype.$api = api
 moment.locale('zh-cn')
 Vue.prototype.$moment = moment

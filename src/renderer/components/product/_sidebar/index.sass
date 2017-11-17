@@ -58,11 +58,24 @@
         background-size: contain
         font-size: 2rem
     .right
+      position: relative
       vertical-align: top
       display: inline-block
       line-height: 30px
       font-weight: $fw-lg
       font-size: $fs-nm
+      .badge
+        position: absolute
+        left: 30px
+        top: -5px
+        display: inline-block
+        height: 14px
+        line-height: 14px
+        padding: 0 8px
+        border-radius: 10px
+        font-size: 10px
+        background: $red
+        color: white
   .userinfo-wrapper.menu-list
     position: absolute
     bottom: 0
@@ -76,3 +89,8 @@
         height: 30px
         box-shadow: $box-shadow
         border-radius: 50%
+    .right
+      width: 110px
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden

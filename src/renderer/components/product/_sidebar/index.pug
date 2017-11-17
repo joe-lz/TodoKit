@@ -5,8 +5,7 @@
     .right 
       span {{curProduct.name}}
       i.iconfont.icon-qiehuan
-    //- i.iconfont.icon-qiehuan
-  .menu-wrapper
+  .menu-wrapper(@click='getStateInfo($route.params.id)')
     router-link.menu-list(:to='{name: "ProductTaskCreate", params: $route.params.id}')
       .left
         i.iconfont.icon-createBom
@@ -18,7 +17,10 @@
     router-link.menu-list(:to='{name: "ProductNotification", params: $route.params.id}')
       .left
         i.iconfont.icon-xiaoxi
-      .right {{ $t('message.nav.notification') }}
+      .right 
+        | {{ $t('message.nav.notification') }}
+        span.badge(v-if='notification_count') {{notification_count}}
+      
     router-link.menu-list(:to='{name: "ProductSetting", params: $route.params.id}')
       .left
         i.iconfont.icon-setting1

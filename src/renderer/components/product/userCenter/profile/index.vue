@@ -53,6 +53,12 @@ export default {
     },
     fileUploaded (result) {
       this.formData.avatar = result
+    },
+    handleSignout () {
+      if (confirm(`确定退出登录吗？`)) {
+        this.$api.RemoveAuth()
+        this.$router.push({name: 'SignUpSMS'})
+      }
     }
   }
 }

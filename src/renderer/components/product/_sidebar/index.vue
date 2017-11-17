@@ -3,12 +3,12 @@
 </template>
 
 <script>
-import {mapGetters} from 'vuex'
+import {mapActions, mapGetters} from 'vuex'
 
 export default {
   name: 'ProductSideBar',
   computed: {
-    ...mapGetters(['curProduct'])
+    ...mapGetters(['curProduct', 'notification_count'])
   },
   data () {
     return {
@@ -18,6 +18,7 @@ export default {
   created () {
   },
   methods: {
+    ...mapActions(['getStateInfo'])
   }
 }
 </script>
