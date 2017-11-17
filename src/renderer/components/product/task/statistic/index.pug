@@ -5,6 +5,10 @@
     //-   button(@click='changeType(1)', :class='{"active": type==1}') Bug
     //-   button(@click='changeType(2)', :class='{"active": type==2}') 需求
     //- .version-select-wrapper
+    Select.version-select(v-model='type' placeholder='全部' @on-change='changeType(type)')
+      //- Option(:value=0) 全部
+      Option(:value=1) {{$t('message.noun.bug')}}
+      Option(:value=2) {{$t('message.noun.requirements')}}
     Select.version-select(v-if='curProduct && curProduct.versions && curProduct.versions.length > 0' v-model='version' placeholder='全部版本' @on-change='changeVersion')
       Option(value='0') 全部版本
       Option(v-for='item of curProduct.versions', :value='item', :key='item')

@@ -13,16 +13,23 @@
       span.isUrgent(v-if='curPost.isUrgent') 紧急
       span.not(v-else) 不紧急
     .con.con2
-      span {{curPost.tag}}
-      span ／
+      //- span {{curPost.tag}}
+      //- span ／
       span {{curPost.version}}
       span ／
       span(v-if='curPost.level == 1') 待办
       span(v-if='curPost.level == 2') 待审核
       span(v-if='curPost.level == 5') 已归档
       span ／
-      span.type(v-if='curPost.type == 1') Bug
-      span.type(v-else-if='curPost.type == 2') 需求
+      //- span.type(v-if='curPost.type == 1') Bug
+      //- span.type(v-else-if='curPost.type == 2') 需求
+      Select(size='small' v-model='curPostForm.type', :placeholder="$t('message.noun.tag')" @on-change='handleUpdate')
+        Option(:value='2') {{$t('message.noun.requirements')}}
+        Option(:value='1') {{$t('message.noun.bug')}}
+      span ／
+      Select(size='small' v-model='curPostForm.tag', :placeholder="$t('message.noun.tag')" @on-change='handleUpdate')
+        Option(v-for='item of curProduct.tags', :value='item', :key='item')
+
     .con.time(v-text='$moment(curPost.createdAt).format("YYYY-MM-DD H:mm")')
   .bottom-info
     .operation-wrapper

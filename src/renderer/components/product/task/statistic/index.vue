@@ -9,7 +9,7 @@ export default {
     return {
       day: '',
       dayValue: '',
-      type: 0,
+      type: 2,
       tagArray: [],
       versionArray: [],
       curProduct: {},
@@ -17,7 +17,7 @@ export default {
     }
   },
   created () {
-    this.changeType(0)
+    this.changeType(this.type)
     this.getProductInfo()
   },
   methods: {

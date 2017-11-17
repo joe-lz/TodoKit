@@ -1,0 +1,71 @@
+@import "../mixin/mixin.sass"
+
+.bottom-alert
+  position: fixed
+  bottom: 30px
+  left: 50%
+  z-index: 100
+  transform: translate(-50%)
+  width: 150px
+  height: 40px
+  line-height: 40px
+  background: white
+  border-top: $border
+  font-size: 14px
+  text-align: center
+  border-radius: 40px
+  background: $a-color
+  color: white
+  cursor: pointer
+  .new
+.update-wrapper
+  position: fixed
+  bottom: 0
+  left: 0
+  z-index: 1000
+  display: flex
+  align-items: center
+  justify-content: center
+  width: 100vw
+  height: 100vh
+  overflow: hidden
+  // background: $bg-youtube
+  background: white
+  .contain
+
+  .top-version-info
+    margin-bottom: 30px
+    font-weight: $fw-lg
+    font-size: 14px
+    color: $gray
+    text-align: center
+    .old
+      position: fixed
+      right: 30px
+      bottom: 30px
+    .new
+      color: $f-color
+    .point
+      margin: 0 30px
+  .download-wrapper
+    padding-top: 100px
+    text-align: center
+    a
+      margin: 0 30px
+      padding: 0 20px
+      display: inline-block
+      width: 180px
+      height: 50px
+      line-height: 50px
+      background-color: $gray-sub-sub
+      color: $gray
+      border-radius: 6px
+      text-align: left
+      border: 1px solid $gray-sub-sub
+      &:hover
+        color: $f-color
+        border: 1px solid $f-color
+      i
+        margin-right: 15px
+        float: left
+        font-size: 2rem

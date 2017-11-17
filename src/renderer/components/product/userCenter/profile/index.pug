@@ -21,4 +21,5 @@
         Radio(label='开发者') 开发者
         Radio(label='测试者') 测试者
     Form-item.input-wrapper.submit-wrapper
-      Button.btn-submit(type="primary" size='large' @click='handleSubmit', :loading="modal_create_loading") 保存
+      Button.signout(type='error' @click='handleSignout') 退出
+      Button.btn-submit(type="primary" @click='handleSubmit', :loading="modal_create_loading") 保存

@@ -22,11 +22,12 @@ export default {
         to: this.curPost.createrId,
         action: 1, // 1、指派 2、完成  3、拒绝 4、评论 5、归档
         content: ''
-      }
+      },
+      curPostForm: {}
     }
   },
   computed: {
-    ...mapGetters(['allUser'])
+    ...mapGetters(['allUser', 'curProduct'])
   },
   created () {
     this.$nextTick(() => {
@@ -37,8 +38,19 @@ export default {
       this.editor.create()
     })
   },
+  sockets: {
+    // 新评论
+    NewLog (val) {
+      // post是当前post
+      if (val.curLog.postId === this.curPost._id) {
+        this.getAllLog()
+      }
+    }
+  },
   methods: {
-    doNothing () {},
+    doNothing (e) {
+      // console.error(e)
+    },
     restFromData () {
       this.isComment = false
       this.editor.txt.html('')
@@ -53,6 +65,20 @@ export default {
     },
     hideImg () {
       this.isShowImg = true
+    },
+    handleUpdate () {
+      if (this.curPostForm.tag !== this.curPost.tag || this.curPostForm.type !== this.curPost.type) {
+        let url = this.$api.postUpdate
+        let body = {
+          data: this.curPostForm
+        }
+        this.$http.post(url, body).then((res) => {
+          if (res.data.code === 0) {
+            this.$Message.success('操作成功')
+            this.$bus.$emit('TaskOperateSuccess', true)
+          }
+        })
+      }
     },
     getAllLog () {
       let url = this.$api.logAll
@@ -109,6 +135,8 @@ export default {
       this.isComment = false
       this.restFromData()
       this.getAllLog()
+      // curPostForm
+      this.curPostForm = {...this.curPost}
     }
   }
 }
@@ -123,4 +151,23 @@ export default {
   .comment-group
     .ivu-input-wrapper
     .w-e-text
+  .con.con2
+    .ivu-select
+      position: relative
+      display: inline-block
+      width: initial
+      .ivu-select-selection
+        border: none
+        background: $bg-color
+        color: $yellow
+      .ivu-select-arrow
+        color: $yellow
+      .ivu-select-dropdown
+        position: absolute !important
+        min-width: 100px
+        left: initial !important
+        right: 0 !important
+        top: 25px !important
+    // .ivu-select-single .ivu-select-selection .ivu-select-selected-value
+    //   padding-left: 0
 </style>
