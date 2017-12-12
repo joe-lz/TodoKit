@@ -56,12 +56,8 @@ let GetLocal = function (name) {
   return JSON.parse(window.localStorage.getItem(name))
 }
 
-// let root = 'http://127.0.0.1:4100/v3'
-// let apiRoot = 'http://127.0.0.1:4100'
-// let qiniuUrl = 'http://oupexjsrd.bkt.clouddn.com/'
-
-let root = 'https://api.todokit.vip/v3'
-let apiRoot = 'https://api.todokit.vip'
+let root = 'http://127.0.0.1:4100/v3'
+let apiRoot = 'http://127.0.0.1:4100'
 let qiniuUrl = 'http://oupexjsrd.bkt.clouddn.com/'
 
 export default {
