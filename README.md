@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://jeodiong.github.io/#/projects/todokit" target="_blank" rel="noopener noreferrer">
-    <img width="100" src="http://oeu9bzhq1.bkt.clouddn.com/todokit/logo/256x256.png" alt="TodoKit logo">
+    <img width="100" src="build/icons/256x256.png" alt="TodoKit logo">
   </a>
 </p>
 
