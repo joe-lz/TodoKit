@@ -1,0 +1,3 @@
+[submodule "appfolder"]
+	path = app
+	url = git@github.com:jeodiong/TodoKit-app.git
