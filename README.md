@@ -34,42 +34,42 @@ Based on Socket.io
 
 ### Signin / Signout
 
-![登录／注册](https://ws1.sinaimg.cn/large/006tNc79gy1fjk8m2hhczj31kw124q69.jpg)
+![登录／注册](https://user-gold-cdn.xitu.io/2017/12/7/1602ef5a7326d55b?w=2048&h=1372&f=jpeg&s=93213)
 
 
 ### My Products
 
-![我的产品](https://ws4.sinaimg.cn/large/006tNc79gy1fl9hn6u6mtj31kw132dlz.jpg)
+![我的产品](https://user-gold-cdn.xitu.io/2017/12/7/1602ef5a452908c8?w=2048&h=1406&f=jpeg&s=101122)
 
 
 ### My tasks
 
-![我的任务](https://ws2.sinaimg.cn/large/006tNc79gy1fl9hnl2tqzj31kw132jzd.jpg)
+![我的任务](https://user-gold-cdn.xitu.io/2017/12/7/1602ef5a3cc9352a?w=2048&h=1406&f=jpeg&s=151351)
 
 
 ### Assign and prioritize
 
-![我的任务](https://ws3.sinaimg.cn/large/006tNc79gy1fl9hojzkvjj31kw132k4l.jpg)
+![我的任务](https://user-gold-cdn.xitu.io/2017/12/7/1602ef5a4025051d?w=2048&h=1406&f=jpeg&s=292464)
 
 
 ### Capture and track bugs
 
-![创建任务](https://ws2.sinaimg.cn/large/006tNc79gy1fl9hpjjuo4j31kw132n5i.jpg)
+![创建任务](https://user-gold-cdn.xitu.io/2017/12/7/1602ef5a3dd11223?w=2048&h=1406&f=jpeg&s=163807)
 
 
 ### Analysis
 
-![统计](https://ws4.sinaimg.cn/large/006tNc79gy1fl9hpzuhb4j31kw132qb6.jpg)
+![统计](https://user-gold-cdn.xitu.io/2017/12/7/1602ef5a45c3ad1b?w=2048&h=1406&f=jpeg&s=163511)
 
 
 ### Members
 
-![成员管理](https://ws4.sinaimg.cn/large/006tNc79gy1fl9hqctbvoj31kw132e0d.jpg)
+![成员管理](https://user-gold-cdn.xitu.io/2017/12/7/1602ef5a45ba34a2?w=2048&h=1406&f=jpeg&s=258922)
 
 
 
 ### Settings
 
-![账号设置](https://ws3.sinaimg.cn/large/006tNc79gy1fl9hqwau1xj31kw13247z.jpg)
+![账号设置](https://user-gold-cdn.xitu.io/2017/12/7/1602ef5a6b38f662?w=2048&h=1406&f=jpeg&s=155376)
 
 
