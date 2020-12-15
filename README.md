@@ -21,8 +21,7 @@ Many people require for foreign language support. I'm going to add a language co
 # Install
 
 * TodoKit is a beautiful and open source bug and issue tracking software. Helps your teams find, record and track bugs in their projects.
-* [Website](https://jeodiong.github.io/#/projects/todokit)
-* [Download ](https://github.com/jeodiong/TodoKit/releases)
+
 
 # Introduction 
 
